@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaSOrder — Enterprise Technology Procurement Platform</title>
+    <meta name="description"
+        content="SaaSOrder helps businesses procure, manage, and renew technology solutions from leading vendors through a single centralized platform. 50+ vendors, 500+ solutions.">
+    <meta name="keywords"
+        content="SaaS procurement, enterprise software, B2B platform, technology procurement, vendor management, license management">
+    <meta property="og:title" content="SaaSOrder — Enterprise Technology Procurement Platform">
+    <meta property="og:description"
+        content="Procure, manage, and renew technology solutions from leading vendors through a single platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.saasorder.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+
+    <!-- ============================================================
+     1. STICKY HEADER
+     ============================================================ -->
+    <header class="header" id="header">
+        <div class="header__inner">
+
+            <!-- Official SaaSOrder Logo (preserved exactly) -->
+            <a href="index.html" class="header__logo" aria-label="SaaSOrder Home">
+                <svg class="header__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round"
+                        fill="none" />
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round"
+                        fill="none" />
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round"
+                        fill="none" />
+                </svg>
+                <div class="header__logo-text">
+                    <span class="header__logo-name">SAAS<span>ORDER</span></span>
+                </div>
+            </a>
+
+            <nav class="header__nav" aria-label="Main navigation">
+                <ul class="header__nav-list">
+                    <li><a href="#how-it-works" class="header__nav-link">How It Works</a></li>
+                    <li><a href="#calculator" class="header__nav-link">ROI Calculator</a></li>
+                    <li><a href="#vendors" class="header__nav-link">Vendors</a></li>
+                    <li><a href="#benefits" class="header__nav-link">Why SaaSOrder</a></li>
+                    <li><a href="about.html" class="header__nav-link">About</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="login.html" class="header__login" id="nav-login">Login</a>
+                <a href="contact.html" class="btn btn--primary btn--sm" id="nav-demo">Request Demo</a>
+            </div>
+
+            <button class="header__menu-btn" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu__overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <ul class="mobile-menu__list">
+            <li><a href="#how-it-works" class="mobile-menu__link">How It Works</a></li>
+            <li><a href="#calculator" class="mobile-menu__link">ROI Calculator</a></li>
+            <li><a href="#vendors" class="mobile-menu__link">Vendors</a></li>
+            <li><a href="#benefits" class="mobile-menu__link">Why SaaSOrder</a></li>
+            <li><a href="about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+            <a href="login.html" class="btn btn--outline">Login</a>
+            <a href="register.html" class="btn btn--primary">Register</a>
+            <a href="contact.html" class="btn btn--secondary">Request Demo</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ============================================================
+         SECTION 1: HERO
+         ============================================================ -->
+        <section class="hero" id="hero">
+            <!-- Animated gradient mesh background -->
+            <div class="hero__mesh">
+                <div class="hero__orb hero__orb--pink"></div>
+                <div class="hero__orb hero__orb--purple"></div>
+                <div class="hero__orb hero__orb--blue"></div>
+            </div>
+            <div class="hero__grid"></div>
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero__content animate-on-scroll">
+                        <div class="hero__badge">
+                            <span class="hero__badge-dot"></span>
+                            Enterprise Technology Platform
+                        </div>
+                        <h1 class="hero__title">
+                            Technology Procurement,
+                            <span class="hero__title-accent">Consolidated</span>
+                        </h1>
+                        <p class="hero__subtitle">
+                            The B2B Technology Procurement Marketplace. Purchase, manage, and renew software, cloud infrastructure, and IT services from 50+ vendors under a single Master Service Agreement (MSA) — eliminating legal overhead, duplicate contracts, and shadow IT.
+                        </p>
+
+                        <div class="hero__ctas">
+                            <a href="contact.html" class="btn btn--primary btn--lg">Request Demo</a>
+                        </div>
+
+                        <div class="hero__compliance">
+                            <span class="compliance-badge"><span class="badge-icon">✓</span> SOC 2 Type II</span>
+                            <span class="compliance-badge"><span class="badge-icon">✓</span> ISO 27001</span>
+                            <span class="compliance-badge"><span class="badge-icon">✓</span> GDPR Compliant</span>
+                            <span class="compliance-badge"><span class="badge-icon">✓</span> HIPAA Ready</span>
+                        </div>
+
+                        <div class="hero__stats-row">
+                            <div class="hero__stat-item">
+                                <span class="hero__stat-number">50+</span>
+                                <span class="hero__stat-label">Vendors</span>
+                            </div>
+                            <div class="hero__stat-item">
+                                <span class="hero__stat-number">500+</span>
+                                <span class="hero__stat-label">Solutions</span>
+                            </div>
+                            <div class="hero__stat-item">
+                                <span class="hero__stat-number">1,000+</span>
+                                <span class="hero__stat-label">Customers</span>
+                            </div>
+                            <div class="hero__stat-item">
+                                <span class="hero__stat-number">99.9%</span>
+                                <span class="hero__stat-label">Uptime</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual: Procurement Ecosystem Illustration -->
+                    <div class="hero__visual animate-on-scroll" data-delay="200">
+                        <div class="ecosystem">
+                            <div class="ecosystem__flow">
+                                <!-- Vendors -->
+                                <span class="ecosystem__label">Technology Vendors</span>
+                                <div class="ecosystem__vendors">
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="microsoft.svg" alt="Microsoft">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="aws.svg" alt="AWS">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="google.svg" alt="Google">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="cisco.svg" alt="Cisco">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="adobe.svg" alt="Adobe">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="sophos.svg" alt="Sophos">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="acronis.svg" alt="Acronis">
+                                    </div>
+                                    <div class="ecosystem__vendor-icon">
+                                        <img src="3cx.svg" alt="3CX">
+                                    </div>
+                                </div>
+
+                                <!-- Flow connector -->
+                                <div class="ecosystem__connector">
+                                    <div class="ecosystem__connector-line"></div>
+                                    <div class="ecosystem__connector-pulse"></div>
+                                    <div class="ecosystem__connector-label">500+ Vendor Products & Subscriptions</div>
+                                </div>
+
+                                <!-- SaaSOrder Hub -->
+                                <div class="ecosystem__hub">
+                                    <svg class="ecosystem__hub-logo" viewBox="0 0 80 80" fill="none">
+                                        <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10"
+                                            stroke-linecap="round" fill="none" />
+                                        <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10"
+                                            stroke-linecap="round" fill="none" />
+                                        <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10"
+                                            stroke-linecap="round" fill="none" />
+                                    </svg>
+                                    <div class="ecosystem__hub-text">
+                                        <span class="ecosystem__hub-name">SaaSOrder Platform</span>
+                                        <span class="ecosystem__hub-desc">Centralized Procurement Hub</span>
+                                    </div>
+                                </div>
+
+                                <!-- Flow connector -->
+                                <div class="ecosystem__connector">
+                                    <div class="ecosystem__connector-line"></div>
+                                    <div class="ecosystem__connector-pulse"></div>
+                                    <div class="ecosystem__connector-label">Unified Invoicing & Management</div>
+                                </div>
+
+                                <!-- Business Customers -->
+                                <span class="ecosystem__label">Business Customers</span>
+                                <div class="ecosystem__customers">
+                                    <div class="ecosystem__customer">
+                                        <span class="ecosystem__customer-icon">🏢</span>
+                                        Enterprise
+                                    </div>
+                                    <div class="ecosystem__customer">
+                                        <span class="ecosystem__customer-icon">🏗️</span>
+                                        Mid-Market
+                                    </div>
+                                    <div class="ecosystem__customer">
+                                        <span class="ecosystem__customer-icon">🚀</span>
+                                        Growth
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 2: TRUSTED TECHNOLOGY PARTNERS (UNIFIED MARKETPLACE)
+         ============================================================ -->
+        <section class="trust section" id="vendors">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Vendors</div>
+                    <h2 class="section-title">Unified Vendor Marketplace</h2>
+                    <p class="section-subtitle">SaaSOrder serves as your Single Vendor of Record. Onboard 50+ leading global technology vendors with one contract, one billing portal, and unified legal terms.</p>
+                </div>
+                
+                <div class="trust__layout">
+                    <div class="trust__main">
+                        <div class="vendor-categories animate-on-scroll" data-delay="50">
+                            <button class="vendor-cat active" data-filter="all">All Ecosystem</button>
+                            <button class="vendor-cat" data-filter="infra">Cloud & Infra</button>
+                            <button class="vendor-cat" data-filter="security">Cybersecurity</button>
+                            <button class="vendor-cat" data-filter="productivity">Productivity</button>
+                            <button class="vendor-cat" data-filter="saas">SaaS Apps</button>
+                        </div>
+                        <div class="trust__grid animate-on-scroll" data-delay="100" id="vendorGrid">
+                            <div class="trust__logo-card" data-cat="productivity" data-name="Microsoft" style="--vendor-glow: rgba(0, 164, 239, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="microsoft.svg" alt="Microsoft"></div>
+                            <div class="trust__logo-card" data-cat="infra" data-name="AWS" style="--vendor-glow: rgba(255, 153, 0, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="aws.svg" alt="AWS"></div>
+                            <div class="trust__logo-card" data-cat="productivity" data-name="Google" style="--vendor-glow: rgba(66, 133, 244, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="google.svg" alt="Google"></div>
+                            <div class="trust__logo-card" data-cat="security" data-name="Cisco" style="--vendor-glow: rgba(29, 112, 184, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="cisco.svg" alt="Cisco"></div>
+                            <div class="trust__logo-card" data-cat="productivity" data-name="Adobe" style="--vendor-glow: rgba(255, 0, 0, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="adobe.svg" alt="Adobe"></div>
+                            <div class="trust__logo-card" data-cat="security" data-name="Sophos" style="--vendor-glow: rgba(0, 47, 108, 0.25);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="sophos.svg" alt="Sophos"></div>
+                            <div class="trust__logo-card" data-cat="security" data-name="Acronis" style="--vendor-glow: rgba(0, 79, 159, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="acronis.svg" alt="Acronis"></div>
+                            <div class="trust__logo-card" data-cat="productivity" data-name="3CX" style="--vendor-glow: rgba(245, 130, 32, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="3cx.svg" alt="3CX"></div>
+                            <div class="trust__logo-card" data-cat="saas" data-name="DocuSign" style="--vendor-glow: rgba(255, 204, 0, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="docusign.svg" alt="DocuSign"></div>
+                            <div class="trust__logo-card" data-cat="infra" data-name="Red Hat" style="--vendor-glow: rgba(238, 0, 0, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="redhat.svg" alt="Red Hat"></div>
+                            <div class="trust__logo-card" data-cat="saas" data-name="Zoho" style="--vendor-glow: rgba(227, 27, 35, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="zoho.svg" alt="Zoho"></div>
+                            <div class="trust__logo-card" data-cat="infra" data-name="VMware" style="--vendor-glow: rgba(0, 149, 211, 0.22);"><div class="trust__logo-check">✓</div><img class="trust__logo-img" src="vmware.svg" alt="VMware"></div>
+                        </div>
+                    </div>
+                    <div class="trust__sidebar animate-on-scroll" data-delay="200">
+                        <div class="msa-card">
+                            <!-- Default State: shown when 0 vendors selected -->
+                            <div class="msa-card__state-default" id="msaDefaultState">
+                                <div class="msa-card__badge">Single Vendor of Record</div>
+                                <h3 class="msa-card__title">One MSA. Unified Billing.</h3>
+                                <p class="msa-card__desc">Onboarding dozens of IT vendors requires multiple security reviews, contract negotiations, and payment terms. SaaSOrder aggregates your entire stack under a single agreement.</p>
+                                <ul class="msa-card__benefits">
+                                    <li>
+                                        <span class="benefit-check">✓</span>
+                                        <div><strong>Unified Contract:</strong> Buy from any partner under our pre-negotiated Master Service Agreement (MSA).</div>
+                                    </li>
+                                    <li>
+                                        <span class="benefit-check">✓</span>
+                                        <div><strong>Consolidated Billing:</strong> Receive one monthly aggregate invoice for all software and cloud spend.</div>
+                                    </li>
+                                    <li>
+                                        <span class="benefit-check">✓</span>
+                                        <div><strong>Rapid Provisioning:</strong> Add or scale software solutions in hours, not weeks, with pre-cleared legal terms.</div>
+                                    </li>
+                                </ul>
+                                <div class="msa-card__instructions">
+                                    <span class="instruction-icon">💡</span>
+                                    <span>Select vendors on the left to build your custom MSA stack!</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Dynamic Stack State: shown when >= 1 vendors selected -->
+                            <div class="msa-card__state-selected" id="msaSelectedState" style="display: none;">
+                                <div class="msa-card__badge" style="background: rgba(139, 68, 184, 0.1); color: var(--purple-700);">Dynamic MSA Stack</div>
+                                <h3 class="msa-card__title">Your Consolidated Stack</h3>
+                                
+                                <div class="selected-vendors__container">
+                                    <div class="selected-vendors__label">Active Stack:</div>
+                                    <div class="selected-vendors__pills" id="selectedVendorsPills">
+                                        <!-- Dynamic Pills -->
+                                    </div>
+                                </div>
+                                
+                                <div class="calc-divider" style="margin: var(--space-4) 0; opacity: 0.15; height: 1px; background: var(--neutral-200);"></div>
+                                
+                                <div class="msa-savings__grid">
+                                    <div class="msa-saving-item">
+                                        <div class="msa-saving-item__label">Legal Agreement:</div>
+                                        <div class="msa-saving-item__val" id="msa-contracts-val">3 Contracts → <span class="text-gradient">1 MSA</span></div>
+                                    </div>
+                                    <div class="msa-saving-item">
+                                        <div class="msa-saving-item__label">Security Audits:</div>
+                                        <div class="msa-saving-item__val" id="msa-reviews-val">3 Reviews → <span class="text-gradient">1 Audit</span></div>
+                                    </div>
+                                    <div class="msa-saving-item">
+                                        <div class="msa-saving-item__label">Administrative Effort:</div>
+                                        <div class="msa-saving-item__val" id="msa-hours-val">45 Hours Saved / Yr</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="calc-divider" style="margin: var(--space-4) 0; opacity: 0.15; height: 1px; background: var(--neutral-200);"></div>
+                                
+                                <div class="msa-card__quote-box">
+                                    <p class="msa-card__quote-text">SaaSOrder serves as your unified billing account and legal record for this custom stack.</p>
+                                    <button class="btn btn--primary" id="msaRequestQuoteBtn" style="width: 100%; border: none;">
+                                        Request Stack Quote
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 2.5: WHY SAASORDER (VALUE PROP)
+         ============================================================ -->
+        <section class="why-saasorder section section--alt" id="why-saasorder">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Why SaaSOrder</div>
+                    <h2 class="section-title">The Unified B2B Procurement Hub</h2>
+                    <p class="section-subtitle">A modern marketplace solution that simplifies the technology lifecycle from discovery to renewal.</p>
+                </div>
+                
+                <div class="why-saasorder__grid">
+                    <!-- Card 1: Master Contract Consolidation -->
+                    <div class="why-saasorder__card animate-on-scroll">
+                        <div class="why-saasorder__icon-wrapper">
+                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px;">
+                                <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                                <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                                <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                                <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                            </svg>
+                        </div>
+                        <h3 class="why-saasorder__card-title">MSA Consolidation</h3>
+                        <p class="why-saasorder__card-desc">Aggregate 50+ vendors under a single Master Service Agreement (MSA). Eliminate legal delays and security questionnaires.</p>
+                    </div>
+
+                    <!-- Card 2: Centralized Budget Control -->
+                    <div class="why-saasorder__card animate-on-scroll" data-delay="100">
+                        <div class="why-saasorder__icon-wrapper">
+                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px;">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                                <circle cx="12" cy="10" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="why-saasorder__card-title">Centralized PO Control</h3>
+                        <p class="why-saasorder__card-desc">Enforce purchase orders (PO), custom department approval chains, and prevent shadow IT spend.</p>
+                    </div>
+
+                    <!-- Card 3: Enterprise Cost Savings -->
+                    <div class="why-saasorder__card animate-on-scroll" data-delay="200">
+                        <div class="why-saasorder__icon-wrapper">
+                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:28px;height:28px;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="why-saasorder__card-title">18% Average Savings</h3>
+                        <p class="why-saasorder__card-desc">Save on average through pre-negotiated marketplace discounts, license right-sizing, and proactive renewal mitigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 2.7: MARKETPLACE CATALOG PREVIEW
+         ============================================================ -->
+        <section class="marketplace-preview section" id="marketplace-catalog">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Marketplace Preview</div>
+                    <h2 class="section-title">Pre-Vetted B2B Tech Catalog</h2>
+                    <p class="section-subtitle">Browse pre-configured enterprise plans, check security certifications, and route purchase orders instantly.</p>
+                </div>
+                
+                <div class="market-catalog__grid">
+                    <!-- Card 1: AWS -->
+                    <div class="market-card animate-on-scroll">
+                        <div class="market-card__header">
+                            <div class="market-card__vendor-info">
+                                <img src="aws.svg" alt="AWS Logo" class="market-card__vendor-logo">
+                                <div>
+                                    <h4 class="market-card__title">Amazon Web Services</h4>
+                                    <span class="market-card__cat">Cloud Infrastructure</span>
+                                </div>
+                            </div>
+                            <div class="market-card__compliance">
+                                <span class="compliance-tag">SOC 2</span>
+                                <span class="compliance-tag">ISO 27001</span>
+                            </div>
+                        </div>
+                        <div class="market-card__body">
+                            <p class="market-card__desc">Scalable cloud compute, storage, and databases under SaaSOrder's master enterprise agreement.</p>
+                            <div class="market-card__pricing-tier">
+                                <span class="market-card__price-label">SaaSOrder Enterprise Rate</span>
+                                <div class="market-card__price-value">Custom Contracts <span class="discount-pill">12% Savings</span></div>
+                            </div>
+                        </div>
+                        <div class="market-card__footer">
+                            <a href="contact.html" class="btn btn--outline btn--sm btn--full">Request Custom PO</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Microsoft 365 -->
+                    <div class="market-card animate-on-scroll" data-delay="100">
+                        <div class="market-card__header">
+                            <div class="market-card__vendor-info">
+                                <img src="microsoft.svg" alt="Microsoft Logo" class="market-card__vendor-logo">
+                                <div>
+                                    <h4 class="market-card__title">Microsoft 365</h4>
+                                    <span class="market-card__cat">Office Productivity</span>
+                                </div>
+                            </div>
+                            <div class="market-card__compliance">
+                                <span class="compliance-tag">SOC 2</span>
+                                <span class="compliance-tag">HIPAA</span>
+                            </div>
+                        </div>
+                        <div class="market-card__body">
+                            <p class="market-card__desc">Enterprise-grade communication, collaboration, and document editing tools pre-approved legally.</p>
+                            <div class="market-card__pricing-tier">
+                                <span class="market-card__price-label">SaaSOrder Enterprise Rate</span>
+                                <div class="market-card__price-value">$18.50 <span class="price-unit">/user/mo</span> <span class="discount-pill">15% Off</span></div>
+                            </div>
+                        </div>
+                        <div class="market-card__footer">
+                            <a href="contact.html" class="btn btn--outline btn--sm btn--full">Request Custom PO</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Slack -->
+                    <div class="market-card animate-on-scroll" data-delay="200">
+                        <div class="market-card__header">
+                            <div class="market-card__vendor-info">
+                                <div class="market-card__icon-fallback" style="background: #4A154B; color: #FFF;">S</div>
+                                <div>
+                                    <h4 class="market-card__title">Slack Enterprise Grid</h4>
+                                    <span class="market-card__cat">Team Collaboration</span>
+                                </div>
+                            </div>
+                            <div class="market-card__compliance">
+                                <span class="compliance-tag">SOC 3</span>
+                                <span class="compliance-tag">ISO 27018</span>
+                            </div>
+                        </div>
+                        <div class="market-card__body">
+                            <p class="market-card__desc">Pre-negotiated channel-based messaging for secure cross-company IT compliance standards.</p>
+                            <div class="market-card__pricing-tier">
+                                <span class="market-card__price-label">SaaSOrder Enterprise Rate</span>
+                                <div class="market-card__price-value">$12.00 <span class="price-unit">/user/mo</span> <span class="discount-pill">20% Off</span></div>
+                            </div>
+                        </div>
+                        <div class="market-card__footer">
+                            <a href="contact.html" class="btn btn--outline btn--sm btn--full">Request Custom PO</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Sophos Cyber Security -->
+                    <div class="market-card animate-on-scroll" data-delay="300">
+                        <div class="market-card__header">
+                            <div class="market-card__vendor-info">
+                                <img src="sophos.svg" alt="Sophos Logo" class="market-card__vendor-logo">
+                                <div>
+                                    <h4 class="market-card__title">Sophos Intercept X</h4>
+                                    <span class="market-card__cat">Endpoint Protection</span>
+                                </div>
+                            </div>
+                            <div class="market-card__compliance">
+                                <span class="compliance-tag">SOC 2</span>
+                                <span class="compliance-tag">FedRAMP</span>
+                            </div>
+                        </div>
+                        <div class="market-card__body">
+                            <p class="market-card__desc">Next-generation endpoint security with AI-driven threat response and centralized compliance logs.</p>
+                            <div class="market-card__pricing-tier">
+                                <span class="market-card__price-label">SaaSOrder Enterprise Rate</span>
+                                <div class="market-card__price-value">$4.20 <span class="price-unit">/endpoint/mo</span> <span class="discount-pill">18% Off</span></div>
+                            </div>
+                        </div>
+                        <div class="market-card__footer">
+                            <a href="contact.html" class="btn btn--outline btn--sm btn--full">Request Custom PO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 3: HOW SAASORDER WORKS
+         ============================================================ -->
+        <section class="journey section" id="how-it-works">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">How It Works</div>
+                    <h2 class="section-title">Your Procurement Journey</h2>
+                    <p class="section-subtitle">A streamlined process that transforms how your organization acquires
+                        and manages technology solutions.</p>
+                </div>
+                <div class="journey__timeline animate-on-scroll" id="journeyTimeline">
+                    <div class="journey__step">
+                        <div class="journey__step-number">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <div class="journey__step-title">1. Catalog & Vetting</div>
+                        <p class="journey__step-desc">Browse pre-vetted vendors, compare contract terms, and inspect compliance documentations (SOC 2, ISO).</p>
+                    </div>
+                    <div class="journey__step">
+                        <div class="journey__step-number">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <div class="journey__step-title">2. Compliance Routing</div>
+                        <p class="journey__step-desc">Route purchasing requests automatically through security check, budget audit, and manager approval chains.</p>
+                    </div>
+                    <div class="journey__step">
+                        <div class="journey__step-number">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="9"></rect>
+                                <rect x="14" y="3" width="7" height="5"></rect>
+                                <rect x="14" y="12" width="7" height="9"></rect>
+                                <rect x="3" y="16" width="7" height="5"></rect>
+                            </svg>
+                        </div>
+                        <div class="journey__step-title">3. Consolidated PO</div>
+                        <p class="journey__step-desc">Instantly purchase any technology solution under SaaSOrder's unified master agreement and billing portal.</p>
+                    </div>
+                    <div class="journey__step">
+                        <div class="journey__step-number">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 4v6h-6"></path>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </div>
+                        <div class="journey__step-title">4. Spend Optimization</div>
+                        <p class="journey__step-desc">Analyze active seat usage metrics, right-size license counts, and prepare pre-negotiated renewals 90 days out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 4: B2B SPEND & ROI CALCULATOR
+         ============================================================ -->
+        <section class="calculator-section section section--alt" id="calculator">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">ROI Calculator</div>
+                    <h2 class="section-title">Calculate Your Procurement Savings</h2>
+                    <p class="section-subtitle">Discover how much your enterprise can save on licensing, cloud spend, and procurement administration with SaaSOrder.</p>
+                </div>
+
+                <div class="calc-layout animate-on-scroll">
+                    <!-- Left Column: Interactive Inputs -->
+                    <div class="calc-card calc-card--input">
+                        <h3 class="calc-card__title">Your Technology Footprint</h3>
+                        <p class="calc-card__subtitle">Adjust the parameters to estimate your potential ROI.</p>
+                        
+                        <div class="calc-form">
+                            <!-- Input 1: Spend Slider -->
+                            <div class="calc-field">
+                                <div class="calc-field__header">
+                                    <label for="calc-spend" class="calc-field__label">Estimated Annual Software & Cloud Spend</label>
+                                    <span class="calc-field__value" id="calc-spend-value">$250,000</span>
+                                </div>
+                                <input type="range" id="calc-spend" min="50000" max="2500000" step="50000" value="250000" class="calc-slider" aria-valuemin="50000" aria-valuemax="2500000" aria-valuenow="250000">
+                                <div class="calc-slider__labels">
+                                    <span>$50K</span>
+                                    <span>$1.2M</span>
+                                    <span>$2.5M+</span>
+                                </div>
+                            </div>
+
+                            <!-- Input 2: Number of Vendors Dropdown -->
+                            <div class="calc-field">
+                                <label for="calc-vendors" class="calc-field__label">Number of Current Active Vendors</label>
+                                <div class="calc-select-wrapper">
+                                    <select id="calc-vendors" class="calc-select">
+                                        <option value="10" selected>5 - 15 Vendors</option>
+                                        <option value="25">16 - 35 Vendors</option>
+                                        <option value="50">36 - 60 Vendors</option>
+                                        <option value="75">60+ Vendors</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Live Calculated Results -->
+                    <div class="calc-card calc-card--results">
+                        <div class="calc-card__glow"></div>
+                        <h3 class="calc-card__title text-white">Estimated Enterprise ROI</h3>
+                        
+                        <div class="calc-results">
+                            <!-- Result 1: Annual Savings -->
+                            <div class="calc-result-item">
+                                <div class="calc-result-item__label">Estimated Annual Savings</div>
+                                <div class="calc-result-item__value" id="savings-amount">$45,000</div>
+                                <div class="calc-result-item__note">Based on 18% average cost reduction</div>
+                            </div>
+
+                            <div class="calc-divider"></div>
+
+                            <!-- Highlights Grid -->
+                            <div class="calc-highlights">
+                                <div class="calc-highlight">
+                                    <span class="calc-highlight__icon">📄</span>
+                                    <div class="calc-highlight__text">
+                                        <div class="calc-highlight__label">Contract Consolidation</div>
+                                        <div class="calc-highlight__value" id="consolidation-ratio">From 10 contracts to 1 MSA</div>
+                                    </div>
+                                </div>
+                                <div class="calc-highlight">
+                                    <span class="calc-highlight__icon">⏱️</span>
+                                    <div class="calc-highlight__text">
+                                        <div class="calc-highlight__label">Vetting Hours Saved</div>
+                                        <div class="calc-highlight__value" id="hours-saved">150 hrs / year</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calc-actions">
+                            <a href="contact.html" class="btn btn--primary btn--full">Request Custom Savings Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 5: WHY CHOOSE SAASORDER
+         ============================================================ -->
+        <section class="benefits section" id="benefits">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Why SaaSOrder</div>
+                    <h2 class="section-title">Everything You Need for Technology Procurement</h2>
+                    <p class="section-subtitle">From discovery to renewal, our platform simplifies every step of the
+                        enterprise technology lifecycle.</p>
+                </div>
+
+                <div class="benefits__grid">
+                    <div class="benefit-card animate-on-scroll">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_procurement.png" alt="Centralized Procurement" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">Centralized Procurement</h3>
+                        <p class="benefit-card__desc">Consolidate all technology purchasing into a single platform.
+                            Eliminate fragmented processes and gain complete visibility across your organization.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll" data-delay="100">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_ecosystem.png" alt="Vendor Ecosystem" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">Vendor Ecosystem</h3>
+                        <p class="benefit-card__desc">Access 50+ verified technology vendors including Microsoft, AWS,
+                            Google, Cisco, and more — all through a single partnership with SaaSOrder.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll" data-delay="200">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_license.png" alt="License Management" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">License Management</h3>
+                        <p class="benefit-card__desc">Track every license across your organization. Monitor usage,
+                            allocate seats, and ensure compliance from a single centralized dashboard.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll" data-delay="100">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_subscription.png" alt="Subscription Tracking" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">Subscription Tracking</h3>
+                        <p class="benefit-card__desc">Never miss a billing cycle or contract milestone. Real-time
+                            visibility into all subscriptions, costs, and upcoming commitments.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll" data-delay="200">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_renewal.png" alt="Renewal Management" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">Renewal Management</h3>
+                        <p class="benefit-card__desc">Automate renewal workflows with proactive alerts. Optimize
+                            contract terms and eliminate the risk of service interruptions.</p>
+                    </div>
+
+                    <div class="benefit-card animate-on-scroll" data-delay="300">
+                        <div class="benefit-card__image-wrapper">
+                            <img src="benefit_support.png" alt="Business Support" class="benefit-card__image">
+                        </div>
+                        <h3 class="benefit-card__title">Business Support</h3>
+                        <p class="benefit-card__desc">Dedicated enterprise support with SLA-backed response times.
+                            Expert guidance from procurement specialists who understand your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 6: BUSINESS INSIGHTS — Stats
+         ============================================================ -->
+        <section class="stats-section section" id="stats">
+            <div class="container">
+                <div class="stats__grid" id="statsGrid">
+                    <div class="stats__item animate-on-scroll">
+                        <div class="stats__number" data-target="50" data-suffix="+">0</div>
+                        <div class="stats__label">Verified Vendors</div>
+                    </div>
+                    <div class="stats__item animate-on-scroll" data-delay="100">
+                        <div class="stats__number" data-target="1000" data-suffix="+">0</div>
+                        <div class="stats__label">Enterprise Clients</div>
+                    </div>
+                    <div class="stats__item animate-on-scroll" data-delay="200">
+                        <div class="stats__number" data-target="50" data-suffix="M+">0</div>
+                        <div class="stats__label">Annual Spend Managed</div>
+                    </div>
+                    <div class="stats__item animate-on-scroll" data-delay="300">
+                        <div class="stats__number" data-target="18" data-suffix="%">0</div>
+                        <div class="stats__label">Average Client Savings</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 6.5: FAQ
+         ============================================================ -->
+        <section class="faq section section--alt" id="faq">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">FAQ</div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about SaaSOrder's enterprise platform.</p>
+                </div>
+                <div class="faq__list">
+                    <div class="faq__item animate-on-scroll">
+                        <button class="faq__question" aria-expanded="false" id="faq-btn-1">
+                            What is SaaSOrder and how does it work?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+                            <div class="faq__answer-inner">
+                                SaaSOrder is a B2B technology procurement platform that helps businesses access,
+                                procure, manage, and renew technology solutions from multiple global vendors through a
+                                single, centralized platform. Our platform automates procurement workflows, centralizes
+                                license management, and provides real-time analytics to optimize your technology
+                                investments.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item animate-on-scroll" data-delay="100">
+                        <button class="faq__question" aria-expanded="false" id="faq-btn-2">
+                            How does SaaSOrder integrate with existing systems?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+                            <div class="faq__answer-inner">
+                                SaaSOrder offers pre-built integrations with major ERP systems, identity providers
+                                (SSO/SAML), and financial tools. Our REST API and webhook support allow seamless
+                                connection with your existing procurement workflows, HR systems, and accounting
+                                software. Our implementation team provides full onboarding support.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item animate-on-scroll" data-delay="200">
+                        <button class="faq__question" aria-expanded="false" id="faq-btn-3">
+                            What security and compliance standards does SaaSOrder meet?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+                            <div class="faq__answer-inner">
+                                SaaSOrder maintains SOC 2 Type II certification, GDPR compliance, and ISO 27001
+                                standards. We offer SSO/SAML authentication, role-based access controls, full audit
+                                trails, and data encryption at rest and in transit. All vendors are vetted for security
+                                compliance before being listed on our platform.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item animate-on-scroll" data-delay="100">
+                        <button class="faq__question" aria-expanded="false" id="faq-btn-4">
+                            What is the typical implementation timeline?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+                            <div class="faq__answer-inner">
+                                Most enterprise implementations are completed within 4–6 weeks. This includes platform
+                                configuration, system integrations, catalog setup, user training, and a phased rollout.
+                                Our dedicated implementation team works closely with your IT and procurement teams to
+                                ensure a smooth transition.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item animate-on-scroll" data-delay="200">
+                        <button class="faq__question" aria-expanded="false" id="faq-btn-5">
+                            How does pricing work for enterprises?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
+                            <div class="faq__answer-inner">
+                                SaaSOrder offers flexible enterprise pricing based on organization size, number of
+                                users, and feature requirements. We provide volume discounts, annual contract options,
+                                and custom plans for large deployments. Contact our sales team for a personalized quote
+                                and ROI analysis.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+         SECTION 7: CALL TO ACTION
+         ============================================================ -->
+        <section class="final-cta section" id="final-cta">
+            <div class="container">
+                <div class="final-cta__inner animate-on-scroll">
+                    <h2 class="final-cta__title">Ready to Transform Technology Procurement?</h2>
+                    <p class="final-cta__subtitle">Join 1,000+ enterprises that have streamlined their technology
+                        lifecycle with SaaSOrder.</p>
+                    <div class="final-cta__buttons">
+                        <a href="login.html" class="btn btn--white btn--lg" id="final-cta-login">Login</a>
+                        <a href="register.html" class="btn btn--white-outline btn--lg"
+                            id="final-cta-register">Register</a>
+                        <a href="contact.html" class="btn btn--white-outline btn--lg" id="final-cta-demo">Request
+                            Demo</a>
+                        <a href="contact.html" class="btn btn--white-outline btn--lg" id="final-cta-sales">Contact
+                            Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <svg class="footer__logo-icon" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10"
+                                stroke-linecap="round" fill="none" />
+                            <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10"
+                                stroke-linecap="round" fill="none" />
+                            <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10"
+                                stroke-linecap="round" fill="none" />
+                        </svg>
+                        <div class="footer__logo-name">SAAS<span>ORDER</span></div>
+                    </div>
+                    <p class="footer__brand-desc">A technology procurement platform that helps businesses access,
+                        manage, and renew solutions from leading vendors through a centralized platform.</p>
+                    <div class="footer__socials">
+                        <a href="#" class="footer__social" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="Twitter / X">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Platform</h4>
+                    <ul class="footer__links">
+                        <li><a href="platform.html" class="footer__link">Platform Overview</a></li>
+                        <li><a href="vendors.html" class="footer__link">Vendor Ecosystem</a></li>
+                        <li><a href="#" class="footer__link">License Management</a></li>
+                        <li><a href="#" class="footer__link">Subscription Tracking</a></li>
+                        <li><a href="#" class="footer__link">Renewal Management</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="#" class="footer__link">Careers</a></li>
+                        <li><a href="#" class="footer__link">Blog</a></li>
+                        <li><a href="#" class="footer__link">Partner Program</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer__col-title">Contact</h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:info@saasorder.com" class="footer__link">info@saasorder.com</a></li>
+                        <li><a href="tel:+918848806212" class="footer__link">+91 884-8806212 (India)</a></li>
+                        <li><a href="tel:+971544055999" class="footer__link">+971 54 405 5999 (UAE)</a></li>
+                    </ul>
+
+                    <div class="footer__newsletter" style="margin-top: 2rem;">
+                        <h4 class="footer__col-title">Newsletter</h4>
+                        <div class="footer__newsletter-input">
+                            <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                            <button class="footer__newsletter-btn">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2025 SaaSOrder. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Privacy Policy</a>
+                    <a href="#" class="footer__legal-link">Terms of Service</a>
+                    <a href="#" class="footer__legal-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

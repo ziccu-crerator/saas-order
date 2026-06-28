@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — SaaSOrder</title>
+    <meta name="description" content="Create your SaaSOrder account to start procuring technology solutions from 50+ global vendors.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="auth-page">
+        <div class="auth-card" style="max-width:520px;">
+            <div class="auth-card__logo">
+                <svg class="auth-card__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                </svg>
+                <span class="auth-card__logo-name">SAAS<span>ORDER</span></span>
+            </div>
+
+            <h1 class="auth-card__title">Create Your Account</h1>
+            <p class="auth-card__subtitle">Get started with SaaSOrder in minutes</p>
+
+            <form id="registerForm" onsubmit="return false;">
+                <div class="form-group">
+                    <label class="form-label" for="reg-company">Company Name</label>
+                    <input type="text" class="form-input" id="reg-company" placeholder="Your Company Inc." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="reg-first">First Name</label>
+                        <input type="text" class="form-input" id="reg-first" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="reg-last">Last Name</label>
+                        <input type="text" class="form-input" id="reg-last" placeholder="Smith" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reg-email">Work Email</label>
+                    <input type="email" class="form-input" id="reg-email" placeholder="john@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reg-phone">Phone Number</label>
+                    <input type="tel" class="form-input" id="reg-phone" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="reg-password">Password</label>
+                        <input type="password" class="form-input" id="reg-password" placeholder="Min. 8 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="reg-confirm">Confirm Password</label>
+                        <input type="password" class="form-input" id="reg-confirm" placeholder="Confirm password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" id="reg-terms" required>
+                        I agree to the <a href="#" class="form-link" style="display:inline;">Terms of Service</a> and <a href="#" class="form-link" style="display:inline;">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn--primary btn--lg" id="register-submit">Create Account</button>
+            </form>
+
+            <div class="auth-card__footer">
+                Already have an account? <a href="login.html" class="form-link">Sign In</a>
+            </div>
+
+            <div class="auth-card__footer" style="margin-top: var(--space-3);">
+                <a href="index.html" class="form-link">← Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
+

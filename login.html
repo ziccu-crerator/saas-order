@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — SaaSOrder</title>
+    <meta name="description" content="Login to your SaaSOrder account to access technology procurement, license management, and vendor solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="auth-page">
+        <div class="auth-card">
+            <div class="auth-card__logo">
+                <svg class="auth-card__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                </svg>
+                <span class="auth-card__logo-name">SAAS<span>ORDER</span></span>
+            </div>
+
+            <h1 class="auth-card__title">Welcome Back</h1>
+            <p class="auth-card__subtitle">Sign in to access your procurement dashboard</p>
+
+            <form id="loginForm" onsubmit="
+                const email = document.getElementById('login-email').value;
+                if(email === 'admin@saasorder.com') {
+                    window.location.href='admin_dashboard.html';
+                } else {
+                    window.location.href='dashboard.html';
+                }
+                return false;
+            ">
+                <div class="form-group">
+                    <label class="form-label" for="login-email">Email Address</label>
+                    <input type="email" class="form-input" id="login-email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" class="form-input" id="login-password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-footer">
+                    <label class="form-checkbox">
+                        <input type="checkbox" id="login-remember"> Remember me
+                    </label>
+                    <a href="#" class="form-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn--primary btn--lg" id="login-submit">Sign In</button>
+            </form>
+
+            <div class="auth-card__divider">or</div>
+
+            <a href="register.html" class="btn btn--secondary btn--lg" style="width:100%">Create an Account</a>
+
+            <div class="auth-card__footer">
+                <a href="index.html" class="form-link">← Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>
+

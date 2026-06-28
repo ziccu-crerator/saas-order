@@ -1,0 +1,3 @@
+1600: .stats-section {
+1605: .stats-section::before {
+1612: .stats-section::after {

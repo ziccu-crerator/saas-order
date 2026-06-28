@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — SaaSOrder</title>
+    <meta name="description" content="Learn about SaaSOrder's mission to simplify technology procurement for businesses worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header header--solid" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="SaaSOrder Home">
+                <svg class="header__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                </svg>
+                <div class="header__logo-text">
+                    <span class="header__logo-name">SAAS<span>ORDER</span></span>
+                </div>
+            </a>
+            <nav class="header__nav" aria-label="Main navigation">
+                <ul class="header__nav-list">
+                    <li><a href="index.html#how-it-works" class="header__nav-link">How It Works</a></li>
+                    <li><a href="index.html#platform" class="header__nav-link">Platform</a></li>
+                    <li><a href="vendors.html" class="header__nav-link">Vendors</a></li>
+                    <li><a href="about.html" class="header__nav-link active">About</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="login.html" class="header__login">Login</a>
+                <a href="contact.html" class="btn btn--primary btn--sm">Request Demo</a>
+            </div>
+            <button class="header__menu-btn" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu__overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
+            <li><a href="vendors.html" class="mobile-menu__link">Vendors</a></li>
+            <li><a href="about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+            <a href="login.html" class="btn btn--outline">Login</a>
+            <a href="register.html" class="btn btn--primary">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label" style="justify-content:center;">About SaaSOrder</div>
+                <h1 class="page-hero__title">Transforming Technology Procurement</h1>
+                <p class="page-hero__subtitle">We're on a mission to simplify how businesses access, procure, and manage technology solutions from the world's leading vendors.</p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width:800px;margin:0 auto;text-align:center;">
+                    <div class="section-label animate-on-scroll" style="justify-content:center;">Our Mission</div>
+                    <h2 class="section-title animate-on-scroll" style="text-align:center;">Simplifying Technology for Business</h2>
+                    <p class="animate-on-scroll" style="font-size:var(--text-body-lg);color:var(--neutral-500);line-height:1.8;margin-bottom:var(--space-6);">
+                        SaaSOrder was founded on a simple insight: businesses deserve better access to technology. Traditional procurement processes are fragmented, time-consuming, and often lack transparency. We built SaaSOrder to change that.
+                    </p>
+                    <p class="animate-on-scroll" data-delay="100" style="font-size:var(--text-body-lg);color:var(--neutral-500);line-height:1.8;">
+                        Our platform connects businesses with 50+ leading technology vendors through a single, centralized hub — enabling faster procurement, better license management, streamlined renewals, and complete visibility into technology spend.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Our Values</div>
+                    <h2 class="section-title">What Drives Us</h2>
+                    <p class="section-subtitle">The principles that guide every decision we make and every solution we build.</p>
+                </div>
+
+                <div class="about-values__grid">
+                    <div class="about-value-card animate-on-scroll">
+                        <div class="about-value-card__icon" style="background:var(--primary-50);color:var(--primary-500);">🎯</div>
+                        <h3 class="about-value-card__title">Customer First</h3>
+                        <p class="about-value-card__desc">Every feature, every improvement, every decision starts with our customers' needs. We measure success by the value we deliver to businesses.</p>
+                    </div>
+
+                    <div class="about-value-card animate-on-scroll" data-delay="100">
+                        <div class="about-value-card__icon" style="background:var(--purple-50);color:var(--purple-500);">🔒</div>
+                        <h3 class="about-value-card__title">Trust & Transparency</h3>
+                        <p class="about-value-card__desc">We maintain the highest standards of security, compliance, and transparency. SOC 2 Type II certified with complete audit trails.</p>
+                    </div>
+
+                    <div class="about-value-card animate-on-scroll" data-delay="200">
+                        <div class="about-value-card__icon" style="background:var(--blue-50);color:var(--blue-500);">🚀</div>
+                        <h3 class="about-value-card__title">Innovation</h3>
+                        <p class="about-value-card__desc">We continuously evolve our platform to stay ahead of market needs. From AI-driven recommendations to automated workflows, we embrace innovation.</p>
+                    </div>
+
+                    <div class="about-value-card animate-on-scroll">
+                        <div class="about-value-card__icon" style="background:#ECFDF5;color:#059669;">🤝</div>
+                        <h3 class="about-value-card__title">Partnership</h3>
+                        <p class="about-value-card__desc">We build lasting relationships with vendors and customers alike. Our success is measured by the success of our ecosystem partners.</p>
+                    </div>
+
+                    <div class="about-value-card animate-on-scroll" data-delay="100">
+                        <div class="about-value-card__icon" style="background:#FFFBEB;color:#D97706;">⚡</div>
+                        <h3 class="about-value-card__title">Simplicity</h3>
+                        <p class="about-value-card__desc">Technology procurement shouldn't be complicated. We strip away complexity to deliver intuitive, efficient workflows that save time.</p>
+                    </div>
+
+                    <div class="about-value-card animate-on-scroll" data-delay="200">
+                        <div class="about-value-card__icon" style="background:#EEF2FF;color:#4F46E5;">🌍</div>
+                        <h3 class="about-value-card__title">Global Reach</h3>
+                        <p class="about-value-card__desc">We serve businesses across regions and industries, providing localized support with global vendor access from India to the UAE and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section section" id="stats">
+            <div class="container">
+                <div class="stats__grid" id="statsGrid">
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="50" data-suffix="+">0</div>
+                        <div class="stats__label">Technology Vendors</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="1000" data-suffix="+">0</div>
+                        <div class="stats__label">Active Customers</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="500" data-suffix="+">0</div>
+                        <div class="stats__label">Solutions Available</div>
+                    </div>
+                    <div class="stats__item">
+                        <div class="stats__number" data-target="99.9" data-suffix="%" data-decimal="true">0</div>
+                        <div class="stats__label">Platform Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="final-cta__inner">
+                    <h2 class="final-cta__title">Join the SaaSOrder Platform</h2>
+                    <p class="final-cta__subtitle">Ready to simplify your technology procurement? Get started today.</p>
+                    <div class="final-cta__buttons">
+                        <a href="contact.html" class="btn btn--white btn--lg">Request Demo</a>
+                        <a href="register.html" class="btn btn--white-outline btn--lg">Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom" style="border-top:none;">
+                <p class="footer__copyright">© 2025 SaaSOrder. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Privacy Policy</a>
+                    <a href="#" class="footer__legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

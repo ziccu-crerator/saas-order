@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaSOrder — Terminal Marketplace</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0f1115',
+                        foreground: '#ffffff',
+                        muted: '#9ca3af',
+                        accent: '#00ff94',
+                        border: '#333333',
+                        panel: '#13161c'
+                    },
+                    fontFamily: {
+                        heading: ['"Space Grotesk"', 'sans-serif'],
+                        body: ['"IBM Plex Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        feed: {
+                            '0%': { transform: 'translateY(100%)', opacity: 0 },
+                            '10%': { transform: 'translateY(0)', opacity: 1 },
+                            '90%': { transform: 'translateY(0)', opacity: 1 },
+                            '100%': { transform: 'translateY(-100%)', opacity: 0 }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        feed: 'feed 4s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+        body { background-color: #0f1115; color: #ffffff; }
+        
+        /* The Spine */
+        .spine {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 2rem; /* Mobile */
+            width: 1px;
+            background-color: #333333;
+            z-index: 50;
+            pointer-events: none;
+        }
+        @media (min-width: 1024px) {
+            .spine { left: 4rem; }
+        }
+
+        /* Subtle grid background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(51, 51, 51, 0.2) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(51, 51, 51, 0.2) 1px, transparent 1px);
+            background-attachment: fixed;
+        }
+
+        /* Hide scrollbar for ticker */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-body bg-background text-foreground antialiased selection:bg-accent selection:text-background relative">
+
+    <!-- Vertical Spine -->
+    <div class="spine hidden md:block"></div>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div class="bg-grid min-h-screen relative">
+                    
+                    {/* Navigation */}
+                    <nav class="border-b border-border bg-background/90 backdrop-blur-sm sticky top-0 z-40">
+                        <div class="max-w-[1400px] mx-auto pl-16 pr-8 h-16 flex items-center justify-between">
+                            <div class="font-heading font-bold text-xl tracking-wider">SAAS<span class="text-accent">ORDER</span></div>
+                            
+                            <div class="hidden md:flex gap-8 font-mono text-sm uppercase tracking-wide text-muted">
+                                <a href="#" class="hover:text-foreground transition-colors">Catalog</a>
+                                <a href="#" class="hover:text-foreground transition-colors">Market Data</a>
+                                <a href="#" class="hover:text-foreground transition-colors">Compliance</a>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <button class="font-mono text-sm uppercase text-muted hover:text-foreground">Login</button>
+                                <button class="border border-accent text-accent font-mono text-sm uppercase px-4 py-2 hover:bg-accent hover:text-background transition-colors rounded-sm">
+                                    Get Started
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section class="max-w-[1400px] mx-auto pl-16 pr-8 py-32 flex flex-col lg:flex-row gap-16 items-start">
+                        {/* Left: 60% */}
+                        <div class="w-full lg:w-[60%] flex flex-col items-start">
+                            <div class="font-mono text-accent text-xs mb-6 uppercase flex items-center gap-2">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                                Live Market
+                            </div>
+                            <h1 class="font-heading font-bold text-5xl md:text-7xl leading-[1.05] uppercase tracking-tight mb-8">
+                                Procure 5,000+ Verified SaaS Tools in One Workflow
+                            </h1>
+                            <p class="text-muted font-body text-lg max-w-xl mb-10 leading-relaxed border-l-2 border-border pl-6">
+                                Bypassing legacy procurement. Instant compliance validation, real-time pricing telemetry, and direct API provisioning for enterprise infrastructure.
+                            </p>
+                            <button class="border border-accent bg-accent/10 text-accent font-mono uppercase px-8 py-4 text-sm hover:bg-accent hover:text-background transition-colors flex items-center gap-4 rounded-sm">
+                                Start Sourcing
+                                <span class="font-mono">→</span>
+                            </button>
+                        </div>
+
+                        {/* Right: 40% Feed */}
+                        <div class="w-full lg:w-[40%] bg-panel border border-border p-6 h-[400px] relative overflow-hidden rounded-sm">
+                            <div class="font-mono text-xs uppercase text-muted mb-4 pb-2 border-b border-border flex justify-between">
+                                <span>Recent Transactions</span>
+                                <span>T-Vol: 14.2M</span>
+                            </div>
+                            
+                            <div class="flex flex-col gap-4">
+                                {[
+                                    { co: 'Acme Corp', action: 'BOUGHT 50 SEATS', tool: 'SLACK', time: '2m ago' },
+                                    { co: 'TechInc', action: 'RENEWED', tool: 'ZOOM', time: '5m ago' },
+                                    { co: 'GlobalNet', action: 'UPGRADED', tool: 'DATADOG', time: '12m ago' },
+                                    { co: 'FinServe', action: 'BOUGHT 100 SEATS', tool: 'GITHUB', time: '18m ago' },
+                                    { co: 'HealthCo', action: 'CANCELED', tool: 'ASANA', time: '22m ago' }
+                                ].map((feed, i) => (
+                                    <div key={i} class="flex justify-between items-start font-mono text-sm py-2 border-b border-border/50 hover:border-accent/50 transition-colors">
+                                        <div>
+                                            <span class="text-foreground">{feed.co}</span>
+                                            <span class="text-muted block text-xs mt-1">{feed.action} <span class="text-accent">{feed.tool}</span></span>
+                                        </div>
+                                        <span class="text-muted text-xs">{feed.time}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            {/* Fade out bottom */}
+                            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-panel to-transparent pointer-events-none"></div>
+                        </div>
+                    </section>
+
+                    {/* Trust Ticker (Overlaps Hero via -mt-10) */}
+                    <div class="border-y border-border bg-panel overflow-hidden -mt-10 relative z-10 flex py-4">
+                        <div class="flex animate-marquee whitespace-nowrap font-mono text-sm text-muted uppercase items-center gap-16 px-8">
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> SOC2 Type II Certified</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Integrated with SAP</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Integrated with NetSuite</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> ISO 27001 Compliant</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Single Sign-On Ready</span>
+                            
+                            {/* Duplicate for infinite effect */}
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> SOC2 Type II Certified</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Integrated with SAP</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Integrated with NetSuite</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> ISO 27001 Compliant</span>
+                            <span class="flex items-center gap-2"><span class="w-2 h-2 bg-border"></span> Single Sign-On Ready</span>
+                        </div>
+                    </div>
+
+                    {/* Category Navigation (The Catalog) */}
+                    <section class="max-w-[1400px] mx-auto pl-16 pr-8 py-32 border-b border-border">
+                        <div class="flex justify-between items-end mb-12">
+                            <h2 class="font-heading text-4xl uppercase">Directory</h2>
+                            <div class="font-mono text-sm text-muted uppercase">IDX: 5,102 Entities</div>
+                        </div>
+                        
+                        <div class="flex flex-col border-t border-border">
+                            {[
+                                { name: 'Cloud Infrastructure', count: '142 Vendors', tag: 'High Volume' },
+                                { name: 'Cybersecurity & Compliance', count: '315 Vendors', tag: 'Trending' },
+                                { name: 'Productivity & Collaboration', count: '89 Vendors', tag: '' },
+                                { name: 'Data Engineering & Analytics', count: '204 Vendors', tag: '' },
+                                { name: 'CRM & Marketing Automation', count: '176 Vendors', tag: '' }
+                            ].map((cat, i) => (
+                                <div key={i} class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-6 border-b border-border hover:border-accent hover:pl-4 transition-all cursor-pointer group">
+                                    <h3 class="font-heading text-2xl group-hover:text-accent transition-colors">{cat.name}</h3>
+                                    <div class="flex items-center gap-6 mt-4 sm:mt-0">
+                                        {cat.tag && <span class="border border-border text-xs font-mono px-2 py-1 uppercase">{cat.tag}</span>}
+                                        <span class="font-mono text-muted text-sm">{cat.count}</span>
+                                        <span class="font-mono text-border group-hover:text-accent transition-colors">→</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Value Prop (Editorial) */}
+                    <section class="max-w-[1400px] mx-auto pl-16 pr-8 py-32 flex flex-col md:flex-row gap-16 border-b border-border bg-[#13161c]">
+                        <div class="w-full md:w-1/2">
+                            <h2 class="font-heading text-4xl lg:text-5xl uppercase leading-tight mb-8">
+                                Cut Procurement Time by 40%
+                            </h2>
+                            <p class="font-body text-muted text-lg border-l border-border pl-6">
+                                Centralize requisition, vendor negotiation, and compliance reviews into a single ledger. Reduce overhead and gain complete visibility into infrastructure spend.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/2 grid grid-cols-2 gap-8 border-l border-border pl-8">
+                            <div>
+                                <div class="font-mono text-xs uppercase text-muted mb-2">Avg. Cycle Time</div>
+                                <div class="font-mono text-4xl text-foreground">14<span class="text-accent text-xl"> Days</span></div>
+                                <div class="font-mono text-xs text-accent mt-2">↓ 40% vs Industry</div>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase text-muted mb-2">Compliance Checks</div>
+                                <div class="font-mono text-4xl text-foreground">Automated</div>
+                                <div class="font-mono text-xs text-muted mt-2">SOC2, GDPR, ISO</div>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase text-muted mb-2">Spend Visibility</div>
+                                <div class="font-mono text-4xl text-foreground">100<span class="text-accent text-xl">%</span></div>
+                                <div class="font-mono text-xs text-muted mt-2">API Sync to ERP</div>
+                            </div>
+                            <div>
+                                <div class="font-mono text-xs uppercase text-muted mb-2">Vendor Onboarding</div>
+                                <div class="font-mono text-4xl text-foreground">0<span class="text-accent text-xl"> Hrs</span></div>
+                                <div class="font-mono text-xs text-muted mt-2">Pre-vetted Network</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Live Activity Table */}
+                    <section class="max-w-[1400px] mx-auto pl-16 pr-8 py-32">
+                        <div class="flex justify-between items-end mb-8">
+                            <h2 class="font-heading text-3xl uppercase">Live Order Book</h2>
+                            <div class="font-mono text-xs text-accent uppercase flex items-center gap-2">
+                                <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div> Live
+                            </div>
+                        </div>
+                        <div class="w-full overflow-x-auto">
+                            <table class="w-full text-left border-collapse font-mono text-sm">
+                                <thead>
+                                    <tr class="border-y border-border text-muted uppercase text-xs">
+                                        <th class="py-4 font-normal">Timestamp</th>
+                                        <th class="py-4 font-normal">Entity</th>
+                                        <th class="py-4 font-normal">Asset</th>
+                                        <th class="py-4 font-normal">Action</th>
+                                        <th class="py-4 font-normal">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-border hover:bg-border/20 transition-colors">
+                                        <td class="py-4 text-muted">14:02:11Z</td>
+                                        <td class="py-4 text-foreground">Enterprise Co</td>
+                                        <td class="py-4 text-foreground">Datadog</td>
+                                        <td class="py-4 text-muted">Procure (1 Yr)</td>
+                                        <td class="py-4 text-accent">Cleared</td>
+                                    </tr>
+                                    <tr class="border-b border-border hover:bg-border/20 transition-colors">
+                                        <td class="py-4 text-muted">13:58:45Z</td>
+                                        <td class="py-4 text-foreground">Startup Inc</td>
+                                        <td class="py-4 text-foreground">Slack</td>
+                                        <td class="py-4 text-muted">Seat Expansion (+20)</td>
+                                        <td class="py-4 text-accent">Cleared</td>
+                                    </tr>
+                                    <tr class="border-b border-border hover:bg-border/20 transition-colors">
+                                        <td class="py-4 text-muted">13:45:00Z</td>
+                                        <td class="py-4 text-foreground">Global Logistics</td>
+                                        <td class="py-4 text-foreground">Salesforce</td>
+                                        <td class="py-4 text-muted">Renewal</td>
+                                        <td class="py-4 text-[#fbbf24]">Pending Auth</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    {/* Massive Footer */}
+                    <footer class="border-t border-border bg-background pt-24 pb-12">
+                        <div class="max-w-[1400px] mx-auto pl-16 pr-8 grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+                            <div>
+                                <div class="font-heading font-bold text-2xl tracking-wider mb-8">SAAS<span class="text-accent">ORDER</span></div>
+                                <p class="font-mono text-xs text-muted">The terminal for software procurement.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs uppercase text-foreground mb-6">Platform</h4>
+                                <ul class="font-body text-sm text-muted flex flex-col gap-4">
+                                    <li><a href="#" class="hover:text-accent transition-colors">Marketplace</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Compliance Hub</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Vendor Onboarding</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Pricing Data</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs uppercase text-foreground mb-6">Developers</h4>
+                                <ul class="font-body text-sm text-muted flex flex-col gap-4">
+                                    <li><a href="#" class="hover:text-accent transition-colors">API Documentation</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Webhooks</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">ERP Integrations</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Status: All Systems Normal</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-mono text-xs uppercase text-foreground mb-6">Legal</h4>
+                                <ul class="font-body text-sm text-muted flex flex-col gap-4">
+                                    <li><a href="#" class="hover:text-accent transition-colors">Terms of Service</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">Privacy Policy</a></li>
+                                    <li><a href="#" class="hover:text-accent transition-colors">SOC2 Report Request</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="max-w-[1400px] mx-auto pl-16 pr-8 border-t border-border pt-8 flex justify-between font-mono text-xs text-muted">
+                            <span>© 2026 SAASORDER. ALL RIGHTS RESERVED.</span>
+                            <span>VER: 4.2.0</span>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaSOrder Admin — Tenants</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar (Admin Theme) -->
+        <aside class="app-sidebar admin-sidebar" id="appSidebar">
+            <div class="app-sidebar__header">
+                <a href="admin_dashboard.html" class="header__logo">
+                    <svg class="header__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    </svg>
+                    <span class="header__logo-name">SAAS<span>ORDER</span> <span style="font-size: 10px; font-weight: 500; letter-spacing: 1px; color: var(--pink-500); background: rgba(255,17,96,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 4px;">ADMIN</span></span>
+                </a>
+            </div>
+
+            <nav class="app-sidebar__nav">
+                <div class="app-nav-label">Platform</div>
+                <a href="admin_dashboard.html" class="app-nav-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Overview
+                </a>
+                <a href="admin_tenants.html" class="app-nav-link active">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Tenants (Clients)
+                </a>
+                
+                <div class="app-nav-label">Marketplace</div>
+                <a href="admin_vendors.html" class="app-nav-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Vendors
+                </a>
+                <a href="#" class="app-nav-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Global Orders
+                </a>
+            </nav>
+
+            <div class="app-sidebar__footer">
+                <a href="login.html" class="app-nav-link">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    Exit Admin
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main bg-neutral-50">
+            <!-- Topbar -->
+            <header class="app-topbar">
+                <h1 class="app-topbar__title">Tenant Management</h1>
+                <div class="app-topbar__actions">
+                    <button class="btn btn--primary btn--sm">+ Onboard Tenant</button>
+                    <div class="app-user-profile">
+                        <div class="app-user-avatar" style="background: var(--neutral-900);">A</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="app-content">
+                <div class="app-card">
+                    <div class="app-card__header">
+                        <h2 class="app-card__title">All Active Tenants</h2>
+                        <div style="display: flex; gap: var(--space-4);">
+                            <input type="text" placeholder="Search tenants..." class="form-input" style="padding: 6px 12px; height: auto;">
+                            <button class="btn btn--outline btn--sm">Filter</button>
+                        </div>
+                    </div>
+                    <div class="app-table-wrapper">
+                        <table class="app-table">
+                            <thead>
+                                <tr>
+                                    <th>Tenant Name</th>
+                                    <th>Primary Contact</th>
+                                    <th>Total Spend (YTD)</th>
+                                    <th>Active Subscriptions</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Acme Corp</strong><br><span style="color: var(--neutral-500); font-size: 12px;">ID: TNT-4921</span></td>
+                                    <td>Sarah J.<br><span style="color: var(--neutral-500); font-size: 12px;">sarah@acme.com</span></td>
+                                    <td>$142,500</td>
+                                    <td>34</td>
+                                    <td><span class="status-badge status-badge--success">Active</span></td>
+                                    <td><button class="btn btn--secondary btn--sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Globex Logistics</strong><br><span style="color: var(--neutral-500); font-size: 12px;">ID: TNT-8820</span></td>
+                                    <td>Mike R.<br><span style="color: var(--neutral-500); font-size: 12px;">mike@globex.com</span></td>
+                                    <td>$84,200</td>
+                                    <td>12</td>
+                                    <td><span class="status-badge status-badge--success">Active</span></td>
+                                    <td><button class="btn btn--secondary btn--sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Stark Industries</strong><br><span style="color: var(--neutral-500); font-size: 12px;">ID: TNT-0012</span></td>
+                                    <td>Tony S.<br><span style="color: var(--neutral-500); font-size: 12px;">ts@stark.com</span></td>
+                                    <td>$4.2M</td>
+                                    <td>104</td>
+                                    <td><span class="status-badge status-badge--success">Active</span></td>
+                                    <td><button class="btn btn--secondary btn--sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Initech</strong><br><span style="color: var(--neutral-500); font-size: 12px;">ID: TNT-1193</span></td>
+                                    <td>Bill L.<br><span style="color: var(--neutral-500); font-size: 12px;">bill@initech.com</span></td>
+                                    <td>$12,000</td>
+                                    <td>3</td>
+                                    <td><span class="status-badge status-badge--warning">Suspended (Billing)</span></td>
+                                    <td><button class="btn btn--secondary btn--sm">Manage</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Ecosystem — SaaSOrder</title>
+    <meta name="description" content="Explore SaaSOrder's vendor ecosystem featuring 50+ technology partners including Microsoft, AWS, Google, Cisco, Adobe, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header header--solid" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="SaaSOrder Home">
+                <svg class="header__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                </svg>
+                <div class="header__logo-text">
+                    <span class="header__logo-name">SAAS<span>ORDER</span></span>
+                </div>
+            </a>
+            <nav class="header__nav" aria-label="Main navigation">
+                <ul class="header__nav-list">
+                    <li><a href="index.html#how-it-works" class="header__nav-link">How It Works</a></li>
+                    <li><a href="index.html#platform" class="header__nav-link">Platform</a></li>
+                    <li><a href="vendors.html" class="header__nav-link active">Vendors</a></li>
+                    <li><a href="about.html" class="header__nav-link">About</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="login.html" class="header__login">Login</a>
+                <a href="contact.html" class="btn btn--primary btn--sm">Request Demo</a>
+            </div>
+            <button class="header__menu-btn" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu__overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
+            <li><a href="vendors.html" class="mobile-menu__link">Vendors</a></li>
+            <li><a href="about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+            <a href="login.html" class="btn btn--outline">Login</a>
+            <a href="register.html" class="btn btn--primary">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label" style="justify-content:center;">Our Partners</div>
+                <h1 class="page-hero__title">Vendor Ecosystem</h1>
+                <p class="page-hero__subtitle">Access technology solutions from 50+ verified global vendors through a single platform.</p>
+            </div>
+        </section>
+
+        <!-- Vendor Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="vendor-grid">
+                    <div class="vendor-card animate-on-scroll">
+                        <img class="vendor-card__logo" src="microsoft.svg" alt="Microsoft">
+                        <h3 class="vendor-card__name">Microsoft</h3>
+                        <p class="vendor-card__desc">Comprehensive suite of productivity, cloud, and enterprise solutions including Microsoft 365, Azure, and Dynamics.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Productivity</span>
+                            <span class="vendor-card__category">Cloud</span>
+                            <span class="vendor-card__category">Security</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="100">
+                        <img class="vendor-card__logo" src="aws.svg" alt="AWS">
+                        <h3 class="vendor-card__name">Amazon Web Services</h3>
+                        <p class="vendor-card__desc">Scalable cloud infrastructure, compute, storage, and machine learning services for enterprise workloads.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Cloud</span>
+                            <span class="vendor-card__category">Infrastructure</span>
+                            <span class="vendor-card__category">AI/ML</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="200">
+                        <img class="vendor-card__logo" src="google.svg" alt="Google">
+                        <h3 class="vendor-card__name">Google Cloud</h3>
+                        <p class="vendor-card__desc">Cloud platform, Workspace productivity tools, data analytics, and AI services for modern businesses.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Cloud</span>
+                            <span class="vendor-card__category">Productivity</span>
+                            <span class="vendor-card__category">Analytics</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll">
+                        <img class="vendor-card__logo" src="cisco.svg" alt="Cisco">
+                        <h3 class="vendor-card__name">Cisco</h3>
+                        <p class="vendor-card__desc">Networking, security, and collaboration solutions including Webex, Meraki, and enterprise networking.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Networking</span>
+                            <span class="vendor-card__category">Security</span>
+                            <span class="vendor-card__category">Collaboration</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="100">
+                        <img class="vendor-card__logo" src="adobe.svg" alt="Adobe">
+                        <h3 class="vendor-card__name">Adobe</h3>
+                        <p class="vendor-card__desc">Creative, marketing, and document management solutions for enterprise digital transformation.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Creative</span>
+                            <span class="vendor-card__category">Marketing</span>
+                            <span class="vendor-card__category">Documents</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="200">
+                        <img class="vendor-card__logo" src="acronis.svg" alt="Acronis">
+                        <h3 class="vendor-card__name">Acronis</h3>
+                        <p class="vendor-card__desc">Cyber protection, backup, and disaster recovery solutions for businesses of all sizes.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Backup</span>
+                            <span class="vendor-card__category">Security</span>
+                            <span class="vendor-card__category">Recovery</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll">
+                        <img class="vendor-card__logo" src="sophos.svg" alt="Sophos">
+                        <h3 class="vendor-card__name">Sophos</h3>
+                        <p class="vendor-card__desc">Next-generation cybersecurity solutions including endpoint, network, and cloud security.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Cybersecurity</span>
+                            <span class="vendor-card__category">Endpoint</span>
+                            <span class="vendor-card__category">Firewall</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="100">
+                        <img class="vendor-card__logo" src="3cx.svg" alt="3CX">
+                        <h3 class="vendor-card__name">3CX</h3>
+                        <p class="vendor-card__desc">VoIP phone system and unified communications platform for businesses.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Communications</span>
+                            <span class="vendor-card__category">VoIP</span>
+                            <span class="vendor-card__category">UC</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="200">
+                        <img class="vendor-card__logo" src="docusign.svg" alt="DocuSign">
+                        <h3 class="vendor-card__name">DocuSign</h3>
+                        <p class="vendor-card__desc">Electronic signature and agreement cloud for digital transaction management.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">eSignature</span>
+                            <span class="vendor-card__category">Documents</span>
+                            <span class="vendor-card__category">Legal</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll">
+                        <img class="vendor-card__logo" src="redhat.svg" alt="Red Hat">
+                        <h3 class="vendor-card__name">Red Hat</h3>
+                        <p class="vendor-card__desc">Enterprise open source solutions including Linux, OpenShift, and cloud-native technologies.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Open Source</span>
+                            <span class="vendor-card__category">Linux</span>
+                            <span class="vendor-card__category">Containers</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="100">
+                        <img class="vendor-card__logo" src="vmware.svg" alt="VMware">
+                        <h3 class="vendor-card__name">VMware</h3>
+                        <p class="vendor-card__desc">Virtualization, multi-cloud, and digital workspace solutions for enterprise infrastructure.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">Virtualization</span>
+                            <span class="vendor-card__category">Multi-Cloud</span>
+                            <span class="vendor-card__category">Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <div class="vendor-card animate-on-scroll" data-delay="200">
+                        <img class="vendor-card__logo" src="zoho.svg" alt="Zoho">
+                        <h3 class="vendor-card__name">Zoho</h3>
+                        <p class="vendor-card__desc">Comprehensive business applications including CRM, finance, HR, and project management tools.</p>
+                        <div class="vendor-card__categories">
+                            <span class="vendor-card__category">CRM</span>
+                            <span class="vendor-card__category">Finance</span>
+                            <span class="vendor-card__category">HR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="final-cta__inner">
+                    <h2 class="final-cta__title">Become a SaaSOrder Vendor Partner</h2>
+                    <p class="final-cta__subtitle">Join our growing ecosystem and reach thousands of business customers through the SaaSOrder platform.</p>
+                    <div class="final-cta__buttons">
+                        <a href="contact.html" class="btn btn--white btn--lg">Partner With Us</a>
+                        <a href="index.html" class="btn btn--white-outline btn--lg">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom" style="border-top:none;">
+                <p class="footer__copyright">© 2025 SaaSOrder. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Privacy Policy</a>
+                    <a href="#" class="footer__legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

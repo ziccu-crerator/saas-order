@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Overview — SaaSOrder</title>
+    <meta name="description" content="Explore SaaSOrder's enterprise technology procurement platform — procurement management, vendor ecosystem, license tracking, and renewal automation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header header--solid" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo" aria-label="SaaSOrder Home">
+                <svg class="header__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M18,40 A22,22 0 0,1 62,40" stroke="#8B44B8" stroke-width="10" stroke-linecap="round" fill="none"/>
+                    <path d="M26,48 A14,14 0 0,0 54,48" stroke="#29ABE2" stroke-width="10" stroke-linecap="round" fill="none"/>
+                </svg>
+                <div class="header__logo-text">
+                    <span class="header__logo-name">SAAS<span>ORDER</span></span>
+                </div>
+            </a>
+            <nav class="header__nav" aria-label="Main navigation">
+                <ul class="header__nav-list">
+                    <li><a href="index.html#how-it-works" class="header__nav-link">How It Works</a></li>
+                    <li><a href="platform.html" class="header__nav-link active">Platform</a></li>
+                    <li><a href="vendors.html" class="header__nav-link">Vendors</a></li>
+                    <li><a href="about.html" class="header__nav-link">About</a></li>
+                    <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="login.html" class="header__login">Login</a>
+                <a href="contact.html" class="btn btn--primary btn--sm">Request Demo</a>
+            </div>
+            <button class="header__menu-btn" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu__overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <ul class="mobile-menu__list">
+            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
+            <li><a href="platform.html" class="mobile-menu__link">Platform</a></li>
+            <li><a href="vendors.html" class="mobile-menu__link">Vendors</a></li>
+            <li><a href="about.html" class="mobile-menu__link">About</a></li>
+            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+        </ul>
+        <div class="mobile-menu__actions">
+            <a href="login.html" class="btn btn--outline">Login</a>
+            <a href="register.html" class="btn btn--primary">Register</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label" style="justify-content:center;">Platform</div>
+                <h1 class="page-hero__title">One Platform for All Your Technology Needs</h1>
+                <p class="page-hero__subtitle">Discover how SaaSOrder streamlines procurement, vendor management, license tracking, and renewal automation.</p>
+            </div>
+        </section>
+
+        <!-- Platform Features -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Capabilities</div>
+                    <h2 class="section-title">Platform Features</h2>
+                    <p class="section-subtitle">A comprehensive suite of tools designed for modern technology procurement.</p>
+                </div>
+
+                <div class="platform-features__grid">
+                    <div class="platform-feature animate-on-scroll">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#FF1160,#FF4D87);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">Solution Discovery</h3>
+                            <p class="platform-feature__desc">Browse and search across 500+ solutions from 50+ vendors. Filter by category, compliance requirements, pricing model, and deployment type to find the perfect fit.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-feature animate-on-scroll" data-delay="100">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#8B44B8,#A868CE);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                                <path d="M3 6h18"></path>
+                                <path d="M16 10a4 4 0 01-8 0"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">Procurement Workflows</h3>
+                            <p class="platform-feature__desc">Automated approval chains, budget controls, and compliance checks ensure every purchase follows your organization's policies and governance requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-feature animate-on-scroll">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#29ABE2,#55C3EE);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">Vendor Management</h3>
+                            <p class="platform-feature__desc">Centralize vendor relationships, track contract terms, monitor SLA compliance, and manage communications across your entire technology partner ecosystem.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-feature animate-on-scroll" data-delay="100">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#059669,#34D399);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">License Management</h3>
+                            <p class="platform-feature__desc">Full visibility into license utilization, seat allocation, and compliance status. Identify unused licenses and optimize your software investments in real time.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-feature animate-on-scroll">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#D97706,#FBBF24);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 4v6h-6"></path>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">Renewal Automation</h3>
+                            <p class="platform-feature__desc">Proactive renewal alerts, automated workflows, and contract optimization tools ensure you never miss a renewal or overpay on renegotiation.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-feature animate-on-scroll" data-delay="100">
+                        <div class="platform-feature__icon" style="background:linear-gradient(135deg,#4F46E5,#818CF8);">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="20" x2="12" y2="10"></line>
+                                <line x1="18" y1="20" x2="18" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="platform-feature__title">Spend Analytics</h3>
+                            <p class="platform-feature__desc">Comprehensive dashboards and reports provide real-time visibility into technology spend across departments, vendors, and cost centers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Preview -->
+        <section class="platform-preview section section--alt">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-label">Dashboard Preview</div>
+                    <h2 class="section-title">Designed for Enterprise Teams</h2>
+                    <p class="section-subtitle">Get a glimpse of the powerful dashboards and tools available to SaaSOrder customers.</p>
+                </div>
+
+                <div class="platform-preview__grid" style="max-width:900px;margin:0 auto;">
+                    <div class="platform-card animate-on-scroll">
+                        <div class="platform-card__preview">
+                            <div class="platform-card__mockup">
+                                <div class="mockup-dashboard">
+                                    <div class="mockup-topbar">
+                                        <div class="mockup-topbar__title">Analytics Overview</div>
+                                        <div class="mockup-topbar__dots">
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--r"></div>
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--y"></div>
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--g"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-metrics">
+                                        <div class="mockup-metric"><div class="mockup-metric__value">$128K</div><div class="mockup-metric__label">Total Spend</div></div>
+                                        <div class="mockup-metric"><div class="mockup-metric__value">342</div><div class="mockup-metric__label">Total Licenses</div></div>
+                                        <div class="mockup-metric"><div class="mockup-metric__value">89%</div><div class="mockup-metric__label">Utilization</div></div>
+                                    </div>
+                                    <div class="mockup-bars">
+                                        <div class="mockup-bar" style="height:50%;background:#FF1160"></div>
+                                        <div class="mockup-bar" style="height:75%;background:#8B44B8"></div>
+                                        <div class="mockup-bar" style="height:40%;background:#29ABE2"></div>
+                                        <div class="mockup-bar" style="height:90%;background:#FF1160"></div>
+                                        <div class="mockup-bar" style="height:60%;background:#8B44B8"></div>
+                                        <div class="mockup-bar" style="height:85%;background:#29ABE2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="platform-card__login-badge">
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="10" height="7" rx="1"></rect><path d="M5 8V5a3 3 0 016 0v3"></path></svg>
+                                Available After Login
+                            </div>
+                        </div>
+                        <div class="platform-card__info">
+                            <h3 class="platform-card__title">Analytics Dashboard</h3>
+                            <p class="platform-card__desc">Deep insights into spend patterns, utilization metrics, and optimization opportunities.</p>
+                        </div>
+                    </div>
+
+                    <div class="platform-card animate-on-scroll" data-delay="100">
+                        <div class="platform-card__preview">
+                            <div class="platform-card__mockup">
+                                <div class="mockup-dashboard">
+                                    <div class="mockup-topbar">
+                                        <div class="mockup-topbar__title">Workflow Manager</div>
+                                        <div class="mockup-topbar__dots">
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--r"></div>
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--y"></div>
+                                            <div class="mockup-topbar__dot mockup-topbar__dot--g"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-rows">
+                                        <div class="mockup-row"><div class="mockup-row__icon" style="background:#059669"></div><div class="mockup-row__text" style="width:70%"></div><span class="mockup-row__badge" style="background:#DCFCE7;color:#166534">Approved</span></div>
+                                        <div class="mockup-row"><div class="mockup-row__icon" style="background:#D97706"></div><div class="mockup-row__text" style="width:55%"></div><span class="mockup-row__badge" style="background:#FEF9C3;color:#854D0E">Pending</span></div>
+                                        <div class="mockup-row"><div class="mockup-row__icon" style="background:#4F46E5"></div><div class="mockup-row__text" style="width:65%"></div><span class="mockup-row__badge" style="background:#DCFCE7;color:#166534">Approved</span></div>
+                                        <div class="mockup-row"><div class="mockup-row__icon" style="background:#FF1160"></div><div class="mockup-row__text" style="width:45%"></div><span class="mockup-row__badge" style="background:#EEF2FF;color:#4338CA">In Review</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="platform-card__login-badge">
+                                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="10" height="7" rx="1"></rect><path d="M5 8V5a3 3 0 016 0v3"></path></svg>
+                                Available After Login
+                            </div>
+                        </div>
+                        <div class="platform-card__info">
+                            <h3 class="platform-card__title">Workflow Manager</h3>
+                            <p class="platform-card__desc">Automated approval chains and procurement workflows tailored to your organization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="final-cta section">
+            <div class="container">
+                <div class="final-cta__inner">
+                    <h2 class="final-cta__title">See the Platform in Action</h2>
+                    <p class="final-cta__subtitle">Schedule a personalized demo and discover how SaaSOrder can transform your technology procurement.</p>
+                    <div class="final-cta__buttons">
+                        <a href="contact.html" class="btn btn--white btn--lg">Request Demo</a>
+                        <a href="login.html" class="btn btn--white-outline btn--lg">Login</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom" style="border-top:none;">
+                <p class="footer__copyright">© 2025 SaaSOrder. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#" class="footer__legal-link">Privacy Policy</a>
+                    <a href="#" class="footer__legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
