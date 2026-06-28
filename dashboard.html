@@ -216,31 +216,39 @@
                         <div class="app-card__body">
                             <div class="timeline">
                                 <div class="timeline-item">
-                                    <div class="timeline-item__time">Today, 10:45 AM</div>
+                                    <div class="timeline-item__icon" style="background: #ecfdf5; color: #10b981;">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                    </div>
                                     <div class="timeline-item__content">
-                                        <strong>Datadog, Inc.</strong><br>
-                                        <span style="color: var(--neutral-500); font-size: 13px;">Renewal completed</span>
+                                        <div class="timeline-item__time">Today, 10:45 AM</div>
+                                        <div class="timeline-item__text"><strong style="color: var(--neutral-900);">Datadog, Inc.</strong> — Renewal completed</div>
                                     </div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="timeline-item__time">Yesterday, 2:10 PM</div>
+                                    <div class="timeline-item__icon" style="background: #eef2ff; color: #6366f1;">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                    </div>
                                     <div class="timeline-item__content">
-                                        <strong>Acme Corp</strong><br>
-                                        <span style="color: var(--neutral-500); font-size: 13px;">Purchased Microsoft 365</span>
+                                        <div class="timeline-item__time">Yesterday, 2:10 PM</div>
+                                        <div class="timeline-item__text"><strong style="color: var(--neutral-900);">Acme Corp</strong> — Purchased Microsoft 365</div>
                                     </div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="timeline-item__time">Yesterday, 11:30 AM</div>
+                                    <div class="timeline-item__icon" style="background: #fffbeb; color: #f59e0b;">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
                                     <div class="timeline-item__content">
-                                        <strong>Wallet Recharged</strong><br>
-                                        <span style="color: var(--success); font-weight: 600; font-size: 13px;">+$10,000.00</span>
+                                        <div class="timeline-item__time">Yesterday, 11:30 AM</div>
+                                        <div class="timeline-item__text"><strong style="color: var(--neutral-900);">Wallet Recharged</strong> — <span style="color: #10b981; font-weight: 600;">+$10,000.00</span></div>
                                     </div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="timeline-item__time">Jun 24, 2026</div>
+                                    <div class="timeline-item__icon" style="background: #f1f5f9; color: #64748b;">
+                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    </div>
                                     <div class="timeline-item__content">
-                                        <strong>CloudFlare</strong><br>
-                                        <span style="color: var(--neutral-500); font-size: 13px;">Vendor updated</span>
+                                        <div class="timeline-item__time">Jun 24, 2026</div>
+                                        <div class="timeline-item__text"><strong style="color: var(--neutral-900);">CloudFlare</strong> — Vendor updated</div>
                                     </div>
                                 </div>
                             </div>
@@ -255,18 +263,32 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('spendChart');
-            if (ctx) {
+            const canvas = document.getElementById('spendChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                
+                // Create gradient
+                const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                gradient.addColorStop(0, 'rgba(41, 171, 226, 0.4)');
+                gradient.addColorStop(1, 'rgba(41, 171, 226, 0.0)');
+
                 new Chart(ctx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
                         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                         datasets: [{
                             label: 'Spend ($)',
                             data: [125000, 195000, 140000, 225000, 180000, 290000],
-                            backgroundColor: '#29ABE2',
-                            borderRadius: 4,
-                            barPercentage: 0.5
+                            borderColor: '#29ABE2',
+                            backgroundColor: gradient,
+                            borderWidth: 3,
+                            pointBackgroundColor: '#ffffff',
+                            pointBorderColor: '#29ABE2',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 6,
+                            fill: true,
+                            tension: 0.4
                         }]
                     },
                     options: {
@@ -276,6 +298,8 @@
                             legend: { display: false },
                             tooltip: {
                                 backgroundColor: '#1E293B',
+                                titleFont: { size: 13, family: 'Inter' },
+                                bodyFont: { size: 14, family: 'Inter', weight: 'bold' },
                                 padding: 12,
                                 displayColors: false,
                                 callbacks: {
@@ -288,18 +312,19 @@
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                grid: { color: '#F1F5F9', drawBorder: false },
-                                border: { display: false },
+                                grid: { color: 'rgba(0,0,0,0.04)', drawBorder: false },
+                                border: { display: false, dash: [4, 4] },
                                 ticks: {
-                                    font: { family: 'Inter', size: 11 },
-                                    color: '#64748B',
+                                    font: { family: 'Inter', size: 12 },
+                                    color: '#94A3B8',
+                                    padding: 10,
                                     callback: function(value) { return '$' + (value / 1000) + 'k'; }
                                 }
                             },
                             x: {
                                 grid: { display: false, drawBorder: false },
                                 border: { display: false },
-                                ticks: { font: { family: 'Inter', size: 11 }, color: '#64748B' }
+                                ticks: { font: { family: 'Inter', size: 12 }, color: '#94A3B8', padding: 10 }
                             }
                         },
                         interaction: { mode: 'index', intersect: false }
