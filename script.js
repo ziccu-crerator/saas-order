@@ -486,4 +486,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ── 13. SIDEBAR TOGGLE ──
+    const sidebar = document.getElementById('appSidebar');
+    const main = document.querySelector('.app-main');
+    if (sidebar && main) {
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'sidebar-toggle-btn';
+        toggleBtn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+        
+        const header = sidebar.querySelector('.app-sidebar__header');
+        if (header) {
+            header.appendChild(toggleBtn);
+        }
+        
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('sidebar-collapsed');
+        });
+    }
+
 });

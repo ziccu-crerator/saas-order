@@ -2803,3 +2803,68 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 .auth-split .auth-card__footer { margin-top: var(--space-4); font-size: var(--text-sm); }
 .auth-split .btn--lg { padding: 10px 24px; font-size: var(--text-base); }
 
+/* =========================================
+   SIDEBAR COLLAPSE TOGGLE
+========================================= */
+.app-sidebar {
+  transition: width 0.3s ease;
+}
+.app-main {
+  transition: margin-left 0.3s ease;
+}
+.sidebar-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--neutral-500);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.sidebar-toggle-btn:hover {
+  background: var(--neutral-100);
+  color: var(--neutral-900);
+}
+.app-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body.sidebar-collapsed .app-sidebar {
+  width: 80px;
+}
+body.sidebar-collapsed .app-main {
+  margin-left: 80px;
+}
+body.sidebar-collapsed .header__logo-name,
+body.sidebar-collapsed .app-nav-label {
+  display: none;
+}
+body.sidebar-collapsed .app-nav-link {
+  font-size: 0;
+  justify-content: center;
+  padding: var(--space-4) 0;
+}
+body.sidebar-collapsed .app-nav-link svg {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+body.sidebar-collapsed .app-sidebar__header {
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-4) 0;
+  gap: var(--space-4);
+}
+body.sidebar-collapsed .header__logo {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+body.sidebar-collapsed .sidebar-toggle-btn {
+  margin: 0 auto;
+}
+
