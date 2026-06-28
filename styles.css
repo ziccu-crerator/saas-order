@@ -2769,8 +2769,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: var(--space-8);
   background: #f3f4f6;
   overflow-y: auto;
@@ -2783,6 +2782,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 }
 
 .auth-split .auth-card {
+  margin: auto;
   background: var(--white);
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   border: 1px solid rgba(0,0,0,0.05);
