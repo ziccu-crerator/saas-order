@@ -2787,8 +2787,15 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   border: 1px solid rgba(0,0,0,0.05);
   border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  padding: var(--space-6) var(--space-8);
   width: 100%;
   max-width: 380px;
 }
+
+.auth-split .auth-card__logo { margin-bottom: var(--space-4); }
+.auth-split .auth-card__title { font-size: var(--text-xl); margin-bottom: var(--space-1); }
+.auth-split .auth-card__subtitle { margin-bottom: var(--space-4); font-size: var(--text-sm); }
+.auth-split .form-group { margin-bottom: var(--space-3); }
+.auth-split .auth-card__footer { margin-top: var(--space-4); font-size: var(--text-sm); }
+.auth-split .btn--lg { padding: 10px 24px; font-size: var(--text-base); }
 
