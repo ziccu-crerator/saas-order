@@ -498,10 +498,16 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 .hero__stat-label { font-size: var(--text-xs); color: var(--neutral-400); margin-top: 2px; font-weight: 500; }
 
 /* ── Hero Ecosystem Visual ── */
-.hero__visual { position: relative; display: flex; justify-content: center; align-items: center; }
+.hero__visual { 
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transform: translateY(-30px);
+}
 
 .ecosystem { width: 100%; max-width: 480px; position: relative; }
-.ecosystem__flow { display: flex; flex-direction: column; align-items: center; gap: var(--space-5); }
+.ecosystem__flow { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
 
 .ecosystem__label {
   font-size: 11px; font-weight: 700; color: var(--neutral-400);
@@ -509,14 +515,14 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 }
 
 .ecosystem__vendors {
-  display: grid; grid-template-columns: repeat(4, 56px);
+  display: grid; grid-template-columns: repeat(4, 52px);
   gap: var(--space-3); justify-content: center;
 }
 
 .ecosystem__vendor-icon {
-  width: 56px; height: 56px; background: var(--white);
+  width: 52px; height: 52px; background: var(--white);
   border: 1px solid var(--neutral-100); border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center; padding: 11px;
+  display: flex; align-items: center; justify-content: center; padding: 10px;
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-normal) var(--ease-default);
   animation: vendor-float 6s ease-in-out infinite;
@@ -545,7 +551,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 /* Flow connector */
 .ecosystem__connector {
   display: flex; flex-direction: column; align-items: center; gap: 0;
-  position: relative; height: 64px; width: 100%;
+  position: relative; height: 48px; width: 100%;
 }
 
 .ecosystem__connector-line {
