@@ -1039,7 +1039,7 @@
         if (typeof gsap !== 'undefined') {
             const steps = document.querySelectorAll('.step-item');
             if(steps.length > 0) {
-                const tl = gsap.timeline({ defaults: { ease: "power2.out" }, paused: true, repeat: -1, repeatDelay: 2 });
+                const tl = gsap.timeline({ defaults: { ease: "power2.out" }, paused: true });
                 
                 // 1. Reveal the first step immediately
                 tl.to(steps[0], { opacity: 1, y: 0, duration: 0.6 });
