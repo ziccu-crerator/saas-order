@@ -115,26 +115,13 @@
                     
                     <div style="display: flex; align-items: center; gap: 8px; padding-left: 16px; border-left: 1px solid var(--neutral-200);">
                         
-                        <!-- Currency Selector -->
-                        <select id="currency-selector" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--neutral-200); outline: none; background: var(--white); color: var(--neutral-700); font-weight: 500; font-size: 13px; margin-right: 8px; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-                            <option value="USD">USD ($)</option>
-                            <option value="EUR">EUR (€)</option>
-                            <option value="GBP">GBP (£)</option>
-                            <option value="INR">INR (₹)</option>
-                            <option value="AUD">AUD ($)</option>
-                        </select>
+                        
 
                         <button class="btn btn--ghost btn--sm" style="padding: 8px; border-radius: 50%;">
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                         </button>
                         
-                        <div style="display: flex; align-items: center; gap: 12px; background: var(--neutral-50); padding: 4px 12px 4px 4px; border-radius: var(--radius-full); border: 1px solid var(--neutral-200); margin: 0 8px;">
-                            <div style="width: 28px; height: 28px; background: var(--primary-100); color: var(--primary-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px;">W</div>
-                            <div style="display: flex; flex-direction: column;">
-                                <span style="font-size: 10px; font-weight: 600; color: var(--neutral-500); text-transform: uppercase;">Wallet</span>
-                                <span id="wallet-amount" data-value="42500" style="font-size: 13px; font-weight: 700; color: var(--neutral-900);">$42,500</span>
-                            </div>
-                        </div>
+                        
 
                         <div class="app-user-profile" onclick="window.location.href='profile.html'">
                             <div class="app-user-avatar">SM</div>
@@ -145,8 +132,36 @@
 
             <div class="app-content">
                 <!-- Stats Grid -->
-                <div class="dashboard-grid">
-                    <div class="stat-card">
+                <!-- Top Section -->
+                <div style="display: grid; grid-template-columns: 1.2fr 2.8fr; gap: 24px; margin-bottom: 24px;">
+                    
+                    <!-- Left: Wallet & Recharge -->
+                    <div class="app-card" style="background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); border: none; color: white; display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25); overflow: hidden;">
+                        <div style="padding: 32px 24px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                            <span style="font-size: 13px; font-weight: 500; opacity: 0.9; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Wallet Balance</span>
+                            <span id="wallet-amount" data-value="42500" style="font-size: 42px; font-weight: 800; letter-spacing: -0.02em;">$42,500</span>
+                        </div>
+                        <div style="padding: 16px 20px; background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.1);">
+                            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                                <select style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.1); color: white; font-weight: 500; font-size: 13px; cursor: pointer;">
+                                    <option style="color: black;">Credit Card ending in 4242</option>
+                                    <option style="color: black;">Bank Transfer (ACH)</option>
+                                </select>
+                                <select id="currency-selector" style="width: 80px; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.1); color: white; font-weight: 500; font-size: 13px; cursor: pointer;">
+                                    <option style="color: black;" value="USD">USD</option>
+                                    <option style="color: black;" value="EUR">EUR</option>
+                                    <option style="color: black;" value="GBP">GBP</option>
+                                    <option style="color: black;" value="INR">INR</option>
+                                    <option style="color: black;" value="AUD">AUD</option>
+                                </select>
+                            </div>
+                            <button style="width: 100%; padding: 12px; background: white; color: var(--primary-600); border: none; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.2s;">Recharge Wallet</button>
+                        </div>
+                    </div>
+
+                    <!-- Right: 2x2 Grid of Stat Cards -->
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                        <div class="stat-card">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Total Managed Spend</span>
                             <span id="total-spend-amount" data-value="4200000" class="stat-card__value">$4.2M</span>
@@ -160,7 +175,8 @@
                         </div>
                     </div>
                     
-                    <div class="stat-card">
+                    
+                        <div class="stat-card">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Active Vendors</span>
                             <span class="stat-card__value">34</span>
@@ -174,7 +190,8 @@
                         </div>
                     </div>
 
-                    <div class="stat-card">
+                    
+                        <div class="stat-card">
                         <div class="stat-card__info">
                             <span class="stat-card__title">End Customers</span>
                             <span class="stat-card__value">1,045</span>
@@ -188,7 +205,8 @@
                         </div>
                     </div>
 
-                    <div class="stat-card">
+                    
+                        <div class="stat-card">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Pending Renewals</span>
                             <span class="stat-card__value">3</span>
@@ -200,6 +218,8 @@
                         <div class="stat-card__icon stat-card__icon--pink">
                             <svg fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
+                    </div>
+                
                     </div>
                 </div>
 
