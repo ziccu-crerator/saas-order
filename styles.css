@@ -401,7 +401,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 
 .hero__inner {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: var(--space-12); align-items: center;
+  gap: var(--space-12); align-items: flex-start;
   position: relative; z-index: 1;
 }
 
