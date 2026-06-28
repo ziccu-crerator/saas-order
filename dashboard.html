@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="app-layout">
@@ -81,95 +82,243 @@
 
             <!-- Dashboard Content -->
             <div class="app-content">
+                <!-- Welcome Banner -->
+                <div class="welcome-banner" style="background: linear-gradient(135deg, var(--primary-500, #FF1160), var(--secondary-500, #8B44B8)); border-radius: 16px; padding: 32px; color: white; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(255, 17, 96, 0.2); position: relative; overflow: hidden;">
+                    <div style="position: relative; z-index: 2;">
+                        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 8px;">Welcome back, Sarah! 👋</h2>
+                        <p style="font-size: 16px; opacity: 0.9; max-width: 600px; margin-bottom: 0;">Here is what's happening with your SaaS spend and renewals today. You have 3 pending renewals requiring attention this week.</p>
+                        <div style="margin-top: 24px; display: flex; gap: 12px;">
+                            <button style="background: white; color: var(--primary-500, #FF1160); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Review Renewals</button>
+                            <button style="background: rgba(255,255,255,0.15); color: white; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; border: 1px solid rgba(255,255,255,0.3); padding: 12px 24px; border-radius: 8px; cursor: pointer; backdrop-filter: blur(8px); transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">View Report</button>
+                        </div>
+                    </div>
+                    <!-- Decorative Background Shapes -->
+                    <div style="position: absolute; right: -50px; top: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: 1;"></div>
+                    <div style="position: absolute; right: 200px; bottom: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: 1;"></div>
+                </div>
+
                 <!-- Stats Grid -->
                 <div class="dashboard-grid">
-                    <div class="stat-card">
+                    <div class="stat-card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Total Managed Spend</span>
                             <span class="stat-card__value">$4.2M</span>
+                            <div style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #10B981; display: flex; align-items: center; gap: 4px;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                <span>12.5% from last month</span>
+                            </div>
                         </div>
                         <div class="stat-card__icon stat-card__icon--blue">
                             <svg fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </div>
                     </div>
                     
-                    <div class="stat-card">
+                    <div class="stat-card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Active Vendors</span>
                             <span class="stat-card__value">34</span>
+                            <div style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #10B981; display: flex; align-items: center; gap: 4px;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                <span>+2 new vendors</span>
+                            </div>
                         </div>
                         <div class="stat-card__icon stat-card__icon--purple">
                             <svg fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </div>
                     </div>
 
-                    <div class="stat-card">
+                    <div class="stat-card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                         <div class="stat-card__info">
                             <span class="stat-card__title">End Customers</span>
                             <span class="stat-card__value">1,045</span>
+                            <div style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #64748B; display: flex; align-items: center; gap: 4px;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"></path></svg>
+                                <span>No change</span>
+                            </div>
                         </div>
                         <div class="stat-card__icon stat-card__icon--green">
                             <svg fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </div>
                     </div>
 
-                    <div class="stat-card">
+                    <div class="stat-card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                         <div class="stat-card__info">
                             <span class="stat-card__title">Pending Renewals</span>
                             <span class="stat-card__value">3</span>
+                            <div style="margin-top: 8px; font-size: 13px; font-weight: 600; color: #EF4444; display: flex; align-items: center; gap: 4px;">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Action required</span>
+                            </div>
                         </div>
                         <div class="stat-card__icon stat-card__icon--pink">
                             <svg fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                         </div>
                     </div>
                 </div>
+                </div>
 
-                <!-- Recent Activity Table -->
-                <div class="app-card">
-                    <div class="app-card__header">
-                        <h2 class="app-card__title">Recent Activity</h2>
-                        <a href="#" class="btn btn--ghost btn--sm">View All</a>
+                <!-- Main Layout Grid -->
+                <div style="display: grid; grid-template-columns: 3fr 2fr; gap: 24px; margin-top: 24px;">
+                    
+                    <!-- Spend Analytics Chart -->
+                    <div class="app-card" style="display: flex; flex-direction: column;">
+                        <div class="app-card__header" style="border-bottom: 1px solid #F1F5F9; padding-bottom: 16px; margin-bottom: 16px;">
+                            <h2 class="app-card__title">Spend Analytics</h2>
+                            <select style="padding: 6px 12px; border-radius: 6px; border: 1px solid #E2E8F0; outline: none; background: #F8FAFC; color: #475569; font-weight: 500; font-family: 'Inter', sans-serif;">
+                                <option>Last 6 Months</option>
+                                <option>This Year</option>
+                            </select>
+                        </div>
+                        <div style="flex-grow: 1; min-height: 250px; position: relative;">
+                            <canvas id="spendChart"></canvas>
+                        </div>
                     </div>
-                    <div class="app-table-wrapper">
-                        <table class="app-table">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Entity</th>
-                                    <th>Description</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Today, 10:45 AM</td>
-                                    <td><strong>Datadog, Inc.</strong></td>
-                                    <td>Annual Renewal Provisioning</td>
-                                    <td>$142,500.00</td>
-                                    <td><span class="status-badge status-badge--success">Cleared</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Yesterday, 2:10 PM</td>
-                                    <td><strong>Slack Technologies</strong></td>
-                                    <td>Seat Expansion (+50)</td>
-                                    <td>$8,400.00</td>
-                                    <td><span class="status-badge status-badge--warning">Processing</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Jun 24, 2026</td>
-                                    <td><strong>CloudFlare</strong></td>
-                                    <td>New MSA Addition Request</td>
-                                    <td>--</td>
-                                    <td><span class="status-badge status-badge--warning">Awaiting Quote</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <!-- Recent Activity Table -->
+                    <div class="app-card">
+                        <div class="app-card__header">
+                            <h2 class="app-card__title">Recent Activity</h2>
+                            <a href="#" class="btn btn--ghost btn--sm">View All</a>
+                        </div>
+                        <div class="app-table-wrapper">
+                            <table class="app-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Entity</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Today, 10:45 AM</td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column;">
+                                                <strong>Datadog, Inc.</strong>
+                                                <span style="font-size: 12px; color: #64748B;">Renewal Provisioning</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-badge--success">Cleared</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Yesterday, 2:10 PM</td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column;">
+                                                <strong>Slack Tech</strong>
+                                                <span style="font-size: 12px; color: #64748B;">Seat Expansion</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-badge--warning">Processing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jun 24, 2026</td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column;">
+                                                <strong>CloudFlare</strong>
+                                                <span style="font-size: 12px; color: #64748B;">New MSA Request</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-badge--warning">Awaiting</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jun 22, 2026</td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column;">
+                                                <strong>Zoom Video</strong>
+                                                <span style="font-size: 12px; color: #64748B;">Monthly Billing</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge status-badge--success">Cleared</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
     <script src="script.js"></script>
+    <script>
+        // Initialize Chart.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('spendChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Spend ($)',
+                            data: [125000, 195000, 140000, 225000, 180000, 290000],
+                            backgroundColor: '#FF1160',
+                            borderRadius: 6,
+                            barPercentage: 0.6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                backgroundColor: '#1E293B',
+                                titleFont: { family: 'Inter', size: 13 },
+                                bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                                padding: 12,
+                                displayColors: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: '#F1F5F9',
+                                    drawBorder: false
+                                },
+                                border: { display: false },
+                                ticks: {
+                                    font: { family: 'Inter', size: 12 },
+                                    color: '#64748B',
+                                    callback: function(value) {
+                                        return '$' + (value / 1000) + 'k';
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false,
+                                    drawBorder: false
+                                },
+                                border: { display: false },
+                                ticks: {
+                                    font: { family: 'Inter', size: 12 },
+                                    color: '#64748B'
+                                }
+                            }
+                        },
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
