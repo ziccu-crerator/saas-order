@@ -291,7 +291,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   transition: all var(--duration-fast) var(--ease-default);
 }
 .header__nav-link:hover, .header__nav-link.active {
-  color: var(--primary-500); background: var(--primary-50);
+  color: var(--primary-500);
 }
 
 .header__actions { display: flex; align-items: center; gap: var(--space-3); }
