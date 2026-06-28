@@ -424,65 +424,130 @@
         </section>
 
         <!-- ============================================================
-         SECTION 2.5: WHY SAASORDER (VALUE PROP)
+         SECTION 2.5: WHY SAASORDER (BENTO BOX REDESIGN)
          ============================================================ -->
-        <section class="why-saasorder section section--alt" id="why-saasorder">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <div class="section-label">Why SaaSOrder</div>
-                    <h2 class="section-title">The Unified B2B Procurement Hub</h2>
-                    <p class="section-subtitle">A modern marketplace solution that simplifies the technology lifecycle
-                        from discovery to renewal.</p>
+        <section class="section section--alt py-24 bg-slate-50" id="why-saasorder">
+            <div class="container mx-auto px-6 max-w-6xl font-sans">
+                <div class="section-header animate-on-scroll text-center mb-16">
+                    <div class="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 font-semibold rounded-full text-xs uppercase tracking-widest mb-4">Why SaaSOrder</div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">The Unified B2B Procurement Hub</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">A modern marketplace solution that simplifies the technology lifecycle from discovery to renewal.</p>
                 </div>
 
-                <div class="why-saasorder__grid">
-                    <!-- Card 1: Master Contract Consolidation -->
-                    <div class="why-saasorder__card animate-on-scroll">
-                        <div class="why-saasorder__icon-wrapper">
-                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" style="width:28px;height:28px;">
-                                <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-                                <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-                                <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-                                <rect x="3" y="16" width="7" height="5" rx="1"></rect>
-                            </svg>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 animate-on-scroll">
+                    
+                    <!-- Card 1: Savings (Large Dark Theme) -->
+                    <div class="col-span-1 md:col-span-7 bg-slate-900 text-white rounded-3xl p-8 md:p-10 relative overflow-hidden flex flex-col justify-between group shadow-xl">
+                        <!-- Decorative bg -->
+                        <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-[#FF1160] to-[#8B44B8] rounded-full blur-[80px] opacity-40 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none"></div>
+                        
+                        <div class="relative z-10 mb-12">
+                            <h3 class="text-3xl md:text-4xl font-black mb-4 tracking-tight">18% Average Savings</h3>
+                            <p class="text-slate-300 text-lg max-w-md">Save on average through pre-negotiated marketplace discounts, license right-sizing, and proactive renewal mitigation.</p>
                         </div>
-                        <h3 class="why-saasorder__card-title">MSA Consolidation</h3>
-                        <p class="why-saasorder__card-desc">Aggregate 50+ vendors under a single Master Service
-                            Agreement (MSA). Eliminate legal delays and security questionnaires.</p>
+                        
+                        <!-- Interactive Chart Element -->
+                        <div class="relative z-10 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transform group-hover:translate-y-[-5px] transition-transform duration-500">
+                            <div class="flex items-end justify-between h-32 gap-2">
+                                <div class="w-1/6 bg-white/20 rounded-t-lg h-full relative group-hover:bg-white/30 transition-colors"></div>
+                                <div class="w-1/6 bg-white/30 rounded-t-lg h-4/5 relative group-hover:bg-white/40 transition-colors"></div>
+                                <div class="w-1/6 bg-white/40 rounded-t-lg h-3/5 relative group-hover:bg-white/50 transition-colors"></div>
+                                <div class="w-1/6 bg-[#29ABE2] rounded-t-lg h-1/3 relative shadow-[0_0_15px_rgba(41,171,226,0.5)]">
+                                    <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-white text-slate-900 font-bold py-1 px-3 rounded text-sm shadow-xl">-18%</div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between mt-3 text-xs text-slate-400 font-semibold uppercase">
+                                <span>Q1</span><span>Q2</span><span>Q3</span><span class="text-blue-300">With SaaSOrder</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Card 2: Centralized Budget Control -->
-                    <div class="why-saasorder__card animate-on-scroll" data-delay="100">
-                        <div class="why-saasorder__icon-wrapper">
-                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" style="width:28px;height:28px;">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                                <circle cx="12" cy="10" r="2"></circle>
-                            </svg>
+                    <!-- Card 2: MSA Consolidation (Medium Light Theme) -->
+                    <div class="col-span-1 md:col-span-5 bg-white border border-slate-100 shadow-xl shadow-slate-200/50 rounded-3xl p-8 md:p-10 flex flex-col justify-between group overflow-hidden relative">
+                        <div class="relative z-10 mb-8">
+                            <div class="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center mb-6 text-[#FF1160]">
+                                <i data-lucide="layers" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">MSA Consolidation</h3>
+                            <p class="text-slate-500">Aggregate 50+ vendors under a single Master Service Agreement. Eliminate legal delays and security questionnaires.</p>
                         </div>
-                        <h3 class="why-saasorder__card-title">Centralized PO Control</h3>
-                        <p class="why-saasorder__card-desc">Enforce purchase orders (PO), custom department approval
-                            chains, and prevent shadow IT spend.</p>
+                        
+                        <!-- Mini Animation Visual -->
+                        <div class="relative z-10 h-32 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-center p-4">
+                            <div class="flex items-center gap-4">
+                                <div class="flex flex-col gap-2">
+                                    <div class="w-10 h-10 bg-white rounded-lg shadow flex items-center justify-center text-xs font-bold text-slate-400 transform transition-transform group-hover:translate-x-2">A</div>
+                                    <div class="w-10 h-10 bg-white rounded-lg shadow flex items-center justify-center text-xs font-bold text-slate-400 transform transition-transform group-hover:translate-x-2 delay-75">B</div>
+                                </div>
+                                <div class="w-8 flex justify-center text-slate-300"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
+                                <div class="w-16 h-20 bg-gradient-to-br from-[#8B44B8] to-[#FF1160] rounded-lg shadow-lg flex items-center justify-center text-white transform transition-transform group-hover:scale-105">
+                                    <i data-lucide="file-check" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Card 3: Enterprise Cost Savings -->
-                    <div class="why-saasorder__card animate-on-scroll" data-delay="200">
-                        <div class="why-saasorder__icon-wrapper">
-                            <svg class="why-saasorder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" style="width:28px;height:28px;">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
+                    <!-- Card 3: Centralized PO Control (Wide Bottom) -->
+                    <div class="col-span-1 md:col-span-12 bg-white border border-slate-100 shadow-xl shadow-slate-200/50 rounded-3xl p-8 md:p-10 group overflow-hidden relative">
+                        <div class="absolute right-0 bottom-0 w-64 h-64 bg-gradient-to-tl from-blue-100/50 to-transparent rounded-tl-full pointer-events-none"></div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center relative z-10">
+                            <div class="md:col-span-1">
+                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 text-[#8B44B8]">
+                                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-3">Centralized PO Control</h3>
+                                <p class="text-slate-500">Enforce purchase orders, custom department approval chains, and prevent shadow IT spend entirely.</p>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <!-- Workflow Timeline -->
+                                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 relative">
+                                    <!-- Connecting Line -->
+                                    <div class="absolute top-1/2 left-10 right-10 h-1 bg-slate-200 -translate-y-1/2 z-0 hidden sm:block">
+                                        <div class="h-full bg-[#29ABE2] w-0 group-hover:w-full transition-all duration-1000 ease-out"></div>
+                                    </div>
+                                    
+                                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10">
+                                        <!-- Step 1 -->
+                                        <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-slate-100 w-full sm:w-1/3 transform transition-transform group-hover:-translate-y-1 hover:!shadow-md">
+                                            <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mb-2 text-slate-500">
+                                                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-sm font-bold text-slate-800">Request</div>
+                                            <div class="text-xs text-slate-400 mt-1">Marketing Dept</div>
+                                        </div>
+                                        <!-- Step 2 -->
+                                        <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-slate-100 w-full sm:w-1/3 transform transition-transform group-hover:-translate-y-1 delay-100 hover:!shadow-md">
+                                            <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-2 text-[#8B44B8]">
+                                                <i data-lucide="eye" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-sm font-bold text-slate-800">Review</div>
+                                            <div class="text-xs text-slate-400 mt-1">IT & Security</div>
+                                        </div>
+                                        <!-- Step 3 -->
+                                        <div class="flex flex-col items-center bg-white p-4 rounded-xl shadow-sm border border-[#29ABE2]/30 w-full sm:w-1/3 transform transition-transform group-hover:-translate-y-1 delay-200 hover:!shadow-md relative overflow-hidden">
+                                            <div class="absolute inset-0 bg-[#29ABE2]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                            <div class="w-10 h-10 rounded-full bg-[#29ABE2] flex items-center justify-center mb-2 text-white shadow-lg shadow-blue-500/30">
+                                                <i data-lucide="check" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="text-sm font-bold text-[#29ABE2]">Approved</div>
+                                            <div class="text-xs text-slate-400 mt-1">PO Auto-Issued</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="why-saasorder__card-title">18% Average Savings</h3>
-                        <p class="why-saasorder__card-desc">Save on average through pre-negotiated marketplace
-                            discounts, license right-sizing, and proactive renewal mitigation.</p>
                     </div>
                 </div>
             </div>
+            
+            <!-- Re-initialize icons just for the new content -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                });
+            </script>
         </section>
 
         <!-- ============================================================
