@@ -2726,8 +2726,11 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 ========================================= */
 .auth-split {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .auth-video-container {
@@ -2741,6 +2744,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 @media (min-width: 992px) {
   .auth-video-container {
     display: block;
+    width: 75%;
   }
 }
 
@@ -2771,11 +2775,12 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   justify-content: center;
   padding: var(--space-8);
   background: var(--neutral-50);
+  overflow-y: auto;
 }
 
 @media (min-width: 992px) {
   .auth-form-container {
-    width: 50%;
+    width: 25%;
   }
 }
 
