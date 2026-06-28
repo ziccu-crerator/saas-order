@@ -289,11 +289,20 @@
             function formatMoney(value, currency, compact = false) {
                 const c = currencyRates[currency];
                 const converted = value * c.rate;
+                
                 if (compact) {
-                    if (converted >= 1000000) return c.symbol + (converted / 1000000).toFixed(1) + 'M';
-                    if (converted >= 1000) return c.symbol + (converted / 1000).toFixed(1) + 'k';
+                    if (currency === 'INR') {
+                        if (converted >= 10000000) return c.symbol + (converted / 10000000).toFixed(1) + 'Cr';
+                        if (converted >= 100000) return c.symbol + (converted / 100000).toFixed(1) + 'L';
+                        if (converted >= 1000) return c.symbol + (converted / 1000).toFixed(1) + 'k';
+                    } else {
+                        if (converted >= 1000000) return c.symbol + (converted / 1000000).toFixed(1) + 'M';
+                        if (converted >= 1000) return c.symbol + (converted / 1000).toFixed(1) + 'k';
+                    }
                 }
-                return c.symbol + converted.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2});
+                
+                const locale = (currency === 'INR') ? 'en-IN' : 'en-US';
+                return c.symbol + converted.toLocaleString(locale, {minimumFractionDigits: 0, maximumFractionDigits: 2});
             }
 
             function updateDashboardCurrency() {
