@@ -115,9 +115,14 @@
                     
                     <div style="display: flex; align-items: center; gap: 8px; padding-left: 16px; border-left: 1px solid var(--neutral-200);">
                         
-                        
-
-                        <button class="btn btn--ghost btn--sm" style="padding: 8px; border-radius: 50%;">
+                        <!-- Currency Selector -->
+                        <select id="currency-selector" style="padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid var(--neutral-200); outline: none; background: white; color: var(--neutral-700); font-weight: 500; font-size: 13px; font-family: 'Inter', sans-serif;">
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                            <option value="INR">INR (₹)</option>
+                            <option value="AUD">AUD ($)</option>
+                        </select>                        <button class="btn btn--ghost btn--sm" style="padding: 8px; border-radius: 50%;">
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                         </button>
                         
@@ -140,22 +145,6 @@
                         <div style="padding: 32px 24px; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
                             <span style="font-size: 13px; font-weight: 500; opacity: 0.9; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Wallet Balance</span>
                             <span id="wallet-amount" data-value="42500" style="font-size: 42px; font-weight: 800; letter-spacing: -0.02em;">$42,500</span>
-                        </div>
-                        <div style="padding: 16px 20px; background: rgba(0,0,0,0.15); border-top: 1px solid rgba(255,255,255,0.1);">
-                            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
-                                <select style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.1); color: white; font-weight: 500; font-size: 13px; cursor: pointer;">
-                                    <option style="color: black;">Credit Card ending in 4242</option>
-                                    <option style="color: black;">Bank Transfer (ACH)</option>
-                                </select>
-                                <select id="currency-selector" style="width: 80px; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); outline: none; background: rgba(255,255,255,0.1); color: white; font-weight: 500; font-size: 13px; cursor: pointer;">
-                                    <option style="color: black;" value="USD">USD</option>
-                                    <option style="color: black;" value="EUR">EUR</option>
-                                    <option style="color: black;" value="GBP">GBP</option>
-                                    <option style="color: black;" value="INR">INR</option>
-                                    <option style="color: black;" value="AUD">AUD</option>
-                                </select>
-                            </div>
-                            <button style="width: 100%; padding: 12px; background: white; color: var(--primary-600); border: none; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.2s;">Recharge Wallet</button>
                         </div>
                     </div>
 
