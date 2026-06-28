@@ -2772,7 +2772,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   align-items: center;
   justify-content: center;
   padding: var(--space-8);
-  background: var(--neutral-50);
+  background: #f3f4f6;
   overflow-y: auto;
 }
 
@@ -2784,11 +2784,11 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 
 .auth-split .auth-card {
   background: var(--white);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border: 1px solid var(--neutral-200);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
   border-radius: var(--radius-xl);
-  padding: var(--space-10);
+  padding: var(--space-8);
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
 }
 
