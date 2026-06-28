@@ -20,6 +20,24 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=2">
+    <!-- Tailwind CSS for modern structure -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .icon-box {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -606,65 +624,61 @@
         <!-- ============================================================
          SECTION 3: HOW SAASORDER WORKS
          ============================================================ -->
-        <section class="journey section" id="how-it-works">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
+        <section class="section overflow-hidden" id="how-it-works">
+            <div class="container flex flex-col items-center justify-center font-sans">
+                <div class="section-header w-full animate-on-scroll">
                     <div class="section-label">How It Works</div>
                     <h2 class="section-title">Your Procurement Journey</h2>
                     <p class="section-subtitle">A streamlined process that transforms how your organization acquires
                         and manages technology solutions.</p>
                 </div>
-                <div class="journey__timeline animate-on-scroll" id="journeyTimeline">
-                    <div class="journey__step">
-                        <div class="journey__step-number">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </div>
-                        <div class="journey__step-title">1. Catalog & Vetting</div>
-                        <p class="journey__step-desc">Browse pre-vetted vendors, compare contract terms, and inspect
-                            compliance documentations (SOC 2, ISO).</p>
+
+                <div class="max-w-6xl w-full relative mt-8">
+                    <!-- Connecting Line Background Container -->
+                    <div class="absolute top-[44px] left-[10%] right-[10%] h-[3px] bg-gray-100 -z-10 rounded-full overflow-hidden hidden md:block">
+                        <!-- Animated Gradient Progress Bar -->
+                        <div id="progress-line" class="h-full w-0 bg-gradient-to-r from-[#ff2a6d] via-[#9b51e0] via-[#38b6ff] to-[#10b981]"></div>
                     </div>
-                    <div class="journey__step">
-                        <div class="journey__step-number">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
+
+                    <!-- Process Steps Container -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        
+                        <!-- Step 1 -->
+                        <div class="step-item flex flex-col items-center text-center opacity-0 transform translate-y-4">
+                            <div class="icon-box w-20 h-20 bg-[#ff2a6d] text-white rounded-[22px] flex items-center justify-center mb-6 transition-transform hover:scale-105 duration-300">
+                                <i data-lucide="search" class="w-8 h-8 stroke-[2.5]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3" style="margin-bottom: 0.75rem;">1. Catalog & Vetting</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[240px]">Browse pre-vetted vendors, compare contract terms, and inspect compliance documentations (SOC 2, ISO).</p>
                         </div>
-                        <div class="journey__step-title">2. Compliance Routing</div>
-                        <p class="journey__step-desc">Route purchasing requests automatically through security check,
-                            budget audit, and manager approval chains.</p>
-                    </div>
-                    <div class="journey__step">
-                        <div class="journey__step-number">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="7" height="9"></rect>
-                                <rect x="14" y="3" width="7" height="5"></rect>
-                                <rect x="14" y="12" width="7" height="9"></rect>
-                                <rect x="3" y="16" width="7" height="5"></rect>
-                            </svg>
+
+                        <!-- Step 2 -->
+                        <div class="step-item flex flex-col items-center text-center opacity-0 transform translate-y-4">
+                            <div class="icon-box w-20 h-20 bg-[#9b51e0] text-white rounded-[22px] flex items-center justify-center mb-6 transition-transform hover:scale-105 duration-300">
+                                <i data-lucide="monitor" class="w-8 h-8 stroke-[2.5]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3" style="margin-bottom: 0.75rem;">2. Compliance Routing</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[240px]">Route purchasing requests automatically through security check, budget audit, and manager approval chains.</p>
                         </div>
-                        <div class="journey__step-title">3. Consolidated PO</div>
-                        <p class="journey__step-desc">Instantly purchase any technology solution under SaaSOrder's
-                            unified master agreement and billing portal.</p>
-                    </div>
-                    <div class="journey__step">
-                        <div class="journey__step-number">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M23 4v6h-6"></path>
-                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-                            </svg>
+
+                        <!-- Step 3 -->
+                        <div class="step-item flex flex-col items-center text-center opacity-0 transform translate-y-4">
+                            <div class="icon-box w-20 h-20 bg-[#38b6ff] text-white rounded-[22px] flex items-center justify-center mb-6 transition-transform hover:scale-105 duration-300">
+                                <i data-lucide="layout-grid" class="w-8 h-8 stroke-[2.5]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3" style="margin-bottom: 0.75rem;">3. Consolidated PO</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[240px]">Instantly purchase any technology solution under SaaSOrder's unified master agreement and billing portal.</p>
                         </div>
-                        <div class="journey__step-title">4. Spend Optimization</div>
-                        <p class="journey__step-desc">Analyze active seat usage metrics, right-size license counts, and
-                            prepare pre-negotiated renewals 90 days out.</p>
+
+                        <!-- Step 4 -->
+                        <div class="step-item flex flex-col items-center text-center opacity-0 transform translate-y-4">
+                            <div class="icon-box w-20 h-20 bg-[#10b981] text-white rounded-[22px] flex items-center justify-center mb-6 transition-transform hover:scale-105 duration-300">
+                                <i data-lucide="refresh-cw" class="w-8 h-8 stroke-[2.5]"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3" style="margin-bottom: 0.75rem;">4. Spend Optimization</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[240px]">Analyze active seat usage metrics, right-size license counts, and prepare pre-negotiated renewals 90 days out.</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1075,6 +1089,44 @@
 
 
     <script src="script.js"></script>
+    <script>
+        // Initialize Lucide SVG Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // GSAP Animation Timeline
+        if (typeof gsap !== 'undefined') {
+            const steps = document.querySelectorAll('.step-item');
+            if(steps.length > 0) {
+                const tl = gsap.timeline({ defaults: { ease: "power2.out" }, paused: true });
+                
+                // 1. Reveal the first step immediately
+                tl.to(steps[0], { opacity: 1, y: 0, duration: 0.6 });
+
+                // 2. Chronologically animate line to next node, then reveal that node
+                tl.to("#progress-line", { width: "33%", duration: 0.8 }, "-=0.2")
+                  .to(steps[1], { opacity: 1, y: 0, duration: 0.6 }, "-=0.2");
+
+                tl.to("#progress-line", { width: "66%", duration: 0.8 }, "-=0.2")
+                  .to(steps[2], { opacity: 1, y: 0, duration: 0.6 }, "-=0.2");
+
+                tl.to("#progress-line", { width: "100%", duration: 0.8 }, "-=0.2")
+                  .to(steps[3], { opacity: 1, y: 0, duration: 0.6 }, "-=0.2");
+
+                // Use IntersectionObserver to play timeline when visible
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        tl.play();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.3 });
+                
+                const section = document.querySelector('#how-it-works .max-w-6xl');
+                if(section) observer.observe(section);
+            }
+        }
+    </script>
 </body>
 
 </html>
