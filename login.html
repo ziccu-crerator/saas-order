@@ -13,8 +13,17 @@
 </head>
 
 <body>
-    <div class="auth-page">
-        <div class="auth-card">
+    
+    <div class="auth-split">
+        <div class="auth-video-container">
+            <video class="auth-video" autoplay loop muted playsinline>
+                <source src="login-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="auth-video-overlay"></div>
+        </div>
+        <div class="auth-form-container">
+            <div class="auth-card">
             <div class="auth-card__logo">
                 <svg class="auth-card__logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10,40 A30,30 0 0,1 70,40" stroke="#FF1160" stroke-width="10" stroke-linecap="round" fill="none"/>
@@ -61,7 +70,9 @@
                 <a href="index.html" class="form-link">← Back to Homepage</a>
             </div>
         </div>
+        </div>
     </div>
+
 <script src="script.js"></script>
 </body>
 
