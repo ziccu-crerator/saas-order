@@ -64,10 +64,10 @@
   --error: #DC2626;
 
   --logo-gradient: linear-gradient(135deg, #FF1160 0%, #8B44B8 50%, #29ABE2 100%);
-  --primary-gradient: linear-gradient(135deg, #FF1160 0%, #C2185B 100%);
-  --glow-pink: rgba(255, 17, 96, 0.15);
-  --glow-purple: rgba(139, 68, 184, 0.12);
-  --glow-blue: rgba(41, 171, 226, 0.12);
+  --primary-gradient: #FF1160;
+  --glow-pink: rgba(255, 17, 96, 0.08);
+  --glow-purple: rgba(139, 68, 184, 0.08);
+  --glow-blue: rgba(41, 171, 226, 0.08);
 
   --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
@@ -101,8 +101,8 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
   --shadow-lg: 0 12px 32px rgba(0,0,0,0.10);
   --shadow-xl: 0 24px 48px rgba(0,0,0,0.12);
-  --shadow-glow-pink: 0 8px 32px rgba(255,17,96,0.20);
-  --shadow-glow-purple: 0 8px 32px rgba(139,68,184,0.18);
+  --shadow-glow-pink: 0 4px 14px rgba(255,17,96,0.15);
+  --shadow-glow-purple: 0 4px 14px rgba(139,68,184,0.12);
 
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -180,14 +180,14 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 
 .btn--primary {
   background: var(--primary-gradient); color: var(--white);
-  box-shadow: var(--shadow-glow-pink);
+  box-shadow: var(--shadow-sm);
 }
 .btn--primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(255,17,96,0.35);
-  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.05);
 }
-.btn--primary:active { transform: translateY(-1px) scale(1); }
+.btn--primary:active { transform: translateY(0); }
 
 .btn--secondary {
   background: var(--white); color: var(--neutral-800);
@@ -252,9 +252,8 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--header-height); display: flex; align-items: center;
-  background: rgba(255,255,255,0.75); backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  background: var(--white);
+  border-bottom: 1px solid var(--neutral-200);
   transition: all var(--duration-slow) var(--ease-default);
 }
 
@@ -2512,7 +2511,26 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   font-size: var(--text-h3);
   font-weight: 800;
   color: var(--neutral-900);
+  display: flex; align-items: center; gap: var(--space-3);
 }
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent; border: none; cursor: pointer; color: var(--neutral-700);
+}
+@media (max-width: 992px) {
+  .mobile-menu-toggle { display: block; }
+}
+
+.app-topbar__search {
+  display: flex; align-items: center; background: var(--neutral-50);
+  border: 1px solid var(--neutral-200); border-radius: var(--radius-md);
+  padding: 8px 12px; gap: 8px; width: 300px;
+}
+.app-topbar__search input {
+  background: transparent; border: none; outline: none; font-size: var(--text-sm); width: 100%;
+}
+.app-topbar__search svg { width: 16px; height: 16px; color: var(--neutral-400); }
 
 .app-topbar__actions {
   display: flex; align-items: center; gap: var(--space-4);
@@ -2648,6 +2666,24 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 .app-table tbody tr:hover {
   background: var(--neutral-50);
 }
+
+/* Timeline Component for Recent Activity */
+.timeline {
+  display: flex; flex-direction: column; gap: var(--space-4);
+  position: relative; padding-left: 24px;
+}
+.timeline::before {
+  content: ''; position: absolute; left: 6px; top: 8px; bottom: 0;
+  width: 2px; background: var(--neutral-200);
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -24px; top: 6px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--primary-500);
+}
+.timeline-item__time { font-size: 11px; font-weight: 700; color: var(--neutral-500); text-transform: uppercase; margin-bottom: 2px; }
+.timeline-item__content { font-size: var(--text-sm); color: var(--neutral-800); }
 
 /* Status Badges */
 .status-badge {
