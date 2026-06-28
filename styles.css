@@ -2781,8 +2781,8 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 
 @media (min-width: 992px) {
   .auth-form-container {
-    justify-content: flex-start;
-    padding-left: 12%;
+    justify-content: flex-end;
+    padding-right: 12%;
   }
 }
 
