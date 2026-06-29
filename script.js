@@ -16,13 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── CURRENCY MANAGEMENT SYSTEM ──
     const currencyRates = {
         'USD': { symbol: '$', rate: 1 },
-        'EUR': { symbol: '€', rate: 0.92 },
-        'GBP': { symbol: '£', rate: 0.79 },
-        'INR': { symbol: '₹', rate: 83.2 },
-        'AUD': { symbol: 'A$', rate: 1.52 }
+        'AED': { symbol: 'AED ', rate: 3.67 },
+        'INR': { symbol: '₹', rate: 83.2 }
     };
 
     let currentCurrency = localStorage.getItem('current_currency') || 'USD';
+    if (!currencyRates[currentCurrency]) {
+        currentCurrency = 'USD';
+        localStorage.setItem('current_currency', 'USD');
+    }
 
     function formatMoney(value, currency, compact = false) {
         const c = currencyRates[currency];
@@ -83,10 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         selector.style.cssText = "padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid var(--neutral-200); outline: none; background: white; color: var(--neutral-700); font-weight: 500; font-size: 13px; font-family: 'Inter', sans-serif; cursor: pointer; margin-right: 8px;";
         selector.innerHTML = `
             <option value="USD">USD ($)</option>
-            <option value="EUR">EUR (€)</option>
-            <option value="GBP">GBP (£)</option>
+            <option value="AED">AED (AED)</option>
             <option value="INR">INR (₹)</option>
-            <option value="AUD">AUD ($)</option>
         `;
         headerActions.insertBefore(selector, headerActions.firstChild);
     }
