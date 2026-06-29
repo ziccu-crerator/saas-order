@@ -85,6 +85,13 @@ def generate_layout(active_page, content):
                     </div>
                     
                     <div style="display: flex; align-items: center; gap: 8px; padding-left: 16px; border-left: 1px solid var(--neutral-200);">
+                        <select id="currency-selector" style="padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid var(--neutral-200); outline: none; background: white; color: var(--neutral-700); font-weight: 500; font-size: 13px; font-family: 'Inter', sans-serif; cursor: pointer;">
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                            <option value="INR">INR (₹)</option>
+                            <option value="AUD">AUD ($)</option>
+                        </select>
                         <button class="btn btn--ghost btn--sm" style="padding: 8px; border-radius: 50%;">
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                         </button>
@@ -93,7 +100,7 @@ def generate_layout(active_page, content):
                             <div style="width: 28px; height: 28px; background: var(--primary-100); color: var(--primary-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px;">W</div>
                             <div style="display: flex; flex-direction: column;">
                                 <span style="font-size: 10px; font-weight: 600; color: var(--neutral-500); text-transform: uppercase;">Wallet</span>
-                                <span style="font-size: 13px; font-weight: 700; color: var(--neutral-900);">$42,500</span>
+                                <span class="money" data-value="42500" id="wallet-balance-topbar" style="font-size: 13px; font-weight: 700; color: var(--neutral-900);">$42,500</span>
                             </div>
                         </div>
 

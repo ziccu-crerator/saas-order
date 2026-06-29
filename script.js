@@ -13,6 +13,120 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ── CURRENCY MANAGEMENT SYSTEM ──
+    const currencyRates = {
+        'USD': { symbol: '$', rate: 1 },
+        'EUR': { symbol: '€', rate: 0.92 },
+        'GBP': { symbol: '£', rate: 0.79 },
+        'INR': { symbol: '₹', rate: 83.2 },
+        'AUD': { symbol: 'A$', rate: 1.52 }
+    };
+
+    let currentCurrency = localStorage.getItem('current_currency') || 'USD';
+
+    function formatMoney(value, currency, compact = false) {
+        const c = currencyRates[currency];
+        const converted = value * c.rate;
+        
+        if (compact) {
+            if (currency === 'INR') {
+                if (converted >= 10000000) return c.symbol + (converted / 10000000).toFixed(1) + 'Cr';
+                if (converted >= 100000) return c.symbol + (converted / 100000).toFixed(1) + 'L';
+                if (converted >= 1000) return c.symbol + (converted / 1000).toFixed(1) + 'k';
+            } else {
+                if (converted >= 1000000) return c.symbol + (converted / 1000000).toFixed(1) + 'M';
+                if (converted >= 1000) return c.symbol + (converted / 1000).toFixed(1) + 'k';
+            }
+        }
+        
+        const locale = (currency === 'INR') ? 'en-IN' : 'en-US';
+        return c.symbol + converted.toLocaleString(locale, {minimumFractionDigits: 0, maximumFractionDigits: 2});
+    }
+
+    window.formatMoney = formatMoney; // Make formatMoney globally accessible
+
+    function updateAllPrices(currency) {
+        const moneyElements = document.querySelectorAll('.money');
+        moneyElements.forEach(el => {
+            let value = parseFloat(el.getAttribute('data-value'));
+            if (isNaN(value)) {
+                value = parseFloat(el.dataset.value);
+            }
+            if (!isNaN(value)) {
+                const compact = el.classList.contains('money-compact') || el.hasAttribute('data-compact');
+                el.textContent = formatMoney(value, currency, compact);
+            }
+        });
+        
+        // Also update ROI calculator displays if they exist on the page
+        const spendValue = document.getElementById('calc-spend-value');
+        const spendSlider = document.getElementById('calc-spend');
+        if (spendValue && spendSlider) {
+            const spend = parseFloat(spendSlider.value);
+            spendValue.textContent = formatMoney(spend, currency);
+        }
+        const savingsAmount = document.getElementById('savings-amount');
+        const vendorsSelect = document.getElementById('calc-vendors');
+        if (savingsAmount && spendSlider && vendorsSelect) {
+            const spend = parseFloat(spendSlider.value);
+            const calculatedSavings = spend * 0.18;
+            savingsAmount.textContent = formatMoney(calculatedSavings, currency);
+        }
+    }
+
+    // Inject currency selector into public headers
+    const headerActions = document.querySelector('.header__actions');
+    if (headerActions && !document.getElementById('global-currency-selector')) {
+        const selector = document.createElement('select');
+        selector.id = 'global-currency-selector';
+        selector.className = 'currency-selector';
+        selector.style.cssText = "padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid var(--neutral-200); outline: none; background: white; color: var(--neutral-700); font-weight: 500; font-size: 13px; font-family: 'Inter', sans-serif; cursor: pointer; margin-right: 8px;";
+        selector.innerHTML = `
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="INR">INR (₹)</option>
+            <option value="AUD">AUD ($)</option>
+        `;
+        headerActions.insertBefore(selector, headerActions.firstChild);
+    }
+
+    // Sync all selectors on the page
+    const allSelectors = document.querySelectorAll('#global-currency-selector, #currency-selector');
+    allSelectors.forEach(sel => {
+        sel.value = currentCurrency;
+        sel.addEventListener('change', (e) => {
+            currentCurrency = e.target.value;
+            localStorage.setItem('current_currency', currentCurrency);
+            allSelectors.forEach(s => s.value = currentCurrency);
+            updateAllPrices(currentCurrency);
+        });
+    });
+
+    // Run initial price update
+    updateAllPrices(currentCurrency);
+
+    // ── SCROLL TO TOP BUTTON ──
+    const scrollTopBtn = document.createElement('div');
+    scrollTopBtn.className = 'scroll-to-top';
+    scrollTopBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px;"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+    document.body.appendChild(scrollTopBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
     // ── 1. STICKY HEADER ──
     const header = document.getElementById('header');
 
@@ -285,15 +399,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const fillPercent = (spend - spendSlider.min) / (spendSlider.max - spendSlider.min) * 100;
         spendSlider.style.background = `linear-gradient(to right, var(--primary-500) 0%, var(--primary-500) ${fillPercent}%, var(--neutral-200) ${fillPercent}%, var(--neutral-200) 100%)`;
 
-        // Update display text for Spend
-        spendValue.textContent = '$' + spend.toLocaleString();
+        // Update display text for Spend using global currency
+        spendValue.textContent = formatMoney(spend, currentCurrency);
 
         // ROI Math
         const calculatedSavings = spend * 0.18;
         const calculatedHours = vendors * 15;
 
-        // Animate Savings text change
-        animateNumericValue(savingsAmount, calculatedSavings, '$');
+        // Display Savings using global currency
+        if (savingsAmount) {
+            savingsAmount.textContent = formatMoney(calculatedSavings, currentCurrency);
+        }
         
         // Update other metrics
         if (consolidationRatio) {
@@ -498,6 +614,29 @@ document.addEventListener('DOMContentLoaded', () => {
         
         toggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('sidebar-collapsed');
+        });
+
+        // Add mobile close button dynamically inside header
+        const sidebarHeader = sidebar.querySelector('.app-sidebar__header');
+        if (sidebarHeader) {
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'mobile-sidebar-close';
+            closeBtn.innerHTML = '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+            sidebarHeader.appendChild(closeBtn);
+
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        }
+
+        // Close sidebar drawer if clicking main content area on mobile
+        main.addEventListener('click', (e) => {
+            // Ignore if clicking the toggle button itself
+            if (e.target.closest('.mobile-menu-toggle')) return;
+            // Only trigger close if sidebar is active (drawer mode) and we aren't clicking a link inside main that does something else
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
         });
     }
 
