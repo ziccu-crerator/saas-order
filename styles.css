@@ -2778,7 +2778,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
 .auth-video-container {
   display: none;
   position: relative;
-  background: #ffffff;
+  background: var(--neutral-900);
   overflow: hidden;
 }
 
@@ -2795,11 +2795,16 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.15; color: 
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .auth-video-overlay {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 17, 96, 0.2) 0%, rgba(139, 68, 184, 0.4) 100%);
 }
 
 .auth-form-container {
