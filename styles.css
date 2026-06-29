@@ -2974,3 +2974,91 @@ body.sidebar-collapsed .sidebar-toggle-btn:hover {
   }
 }
 
+/* ── Process Flow Animation Styles ── */
+.line-container {
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background-color: #f1f5f9;
+    z-index: 1;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .line-container { display: none; }
+}
+
+#progress-line {
+    height: 100%;
+    width: 0%; 
+    background: linear-gradient(to right, #ff2a6d, #9b51e0, #38b6ff, #10b981);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.icon-box:hover {
+    transform: scale(1.05);
+}
+.icon-box svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.box-1 { background-color: #ff2a6d; }
+.box-2 { background-color: #9b51e0; }
+.box-3 { background-color: #38b6ff; }
+.box-4 { background-color: #10b981; }
+
+.step-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+}
+.step-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 240px;
+}
+
