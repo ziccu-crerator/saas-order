@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (!isNaN(value)) {
                 const compact = el.classList.contains('money-compact') || el.hasAttribute('data-compact');
-                el.textContent = formatMoney(value, currency, compact);
+                const prefix = el.getAttribute('data-prefix') || '';
+                el.textContent = prefix + formatMoney(value, currency, compact);
             }
         });
         
